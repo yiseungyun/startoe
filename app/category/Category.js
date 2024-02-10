@@ -1,4 +1,5 @@
 'use client'
+import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 const StyledScreen = styled.div`
@@ -41,7 +42,7 @@ const PartItem = styled.div`
     display: flex;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0px 0px 4px 2px #0000001a;
+    box-shadow: 0px 0px 3px 1px #0000001a;
     height: 112px;
     padding: 0 -10%;
   }
@@ -62,7 +63,7 @@ const PartItem = styled.div`
   & .cardDescription {
     color: #868686;
     font-size: 20px;
-    font-weight: 560;
+    font-weight: 550;
     margin-top: 1%;
     padding-left: 14%;
     line-spacing: 0;
@@ -77,50 +78,49 @@ const PartItem = styled.div`
 `
 
 export const Category = () => {
+  const router = useRouter()
   return (
-    <>
-      <StyledScreen>
-        <TitleText>파트별 학습하기</TitleText>
-        <LearningImage alt="Learning image" src="learning.png"/>
-        <PartList>
-          <PartItem>
-            <div className="background">
-            <div className="cardText">
-              <div className="cardTitle">PART2 학습하기</div>
-              <div className="cardDescription">사진 묘사</div>
-            </div>
-            <img className="forward" alt="forward icon" src="forward.png"/>
-            </div>
-          </PartItem>
-          <PartItem>
-            <div className="background">
-            <div className="cardText">
-              <div className="cardTitle">PART3 학습하기</div>
-              <div className="cardDescription">듣고 질문에 답하기</div>
-            </div>
-            <img className="forward" alt="forward icon" src="forward.png"></img>
-            </div>
-          </PartItem>
-          <PartItem>
-            <div className="background">
-            <div className="cardText">
-              <div className="cardTitle">PART4 학습하기</div>
-              <div className="cardDescription">정보를 사용해 답하기</div>
-            </div>
-            <img className="forward" alt="forward icon" src="forward.png"></img>
-            </div>
-          </PartItem>
-          <PartItem>
-            <div className="background">
-            <div className="cardText">
-              <div className="cardTitle">PART5 학습하기</div>
-              <div className="cardDescription">의견 제시하기</div>
-            </div>
-            <img className="forward" alt="forward icon" src="forward.png"></img>
-            </div>
-          </PartItem>
-        </PartList>
-      </StyledScreen>
-    </>
+    <StyledScreen>
+      <TitleText>파트별 학습하기</TitleText>
+      <LearningImage alt="Learning image" src="learning.png"/>
+      <PartList>
+        <PartItem onClick={()=>{ router.push('/category/part2') }}>
+          <div className="background">
+          <div className="cardText">
+            <div className="cardTitle">PART2 학습하기</div>
+            <div className="cardDescription">사진 묘사</div>
+          </div>
+          <img className="forward" alt="forward icon" src="forward.png"/>
+          </div>
+        </PartItem>
+        <PartItem onClick={()=>{ router.push('/category/part3') }}>
+          <div className="background">
+          <div className="cardText">
+            <div className="cardTitle">PART3 학습하기</div>
+            <div className="cardDescription">듣고 질문에 답하기</div>
+          </div>
+          <img className="forward" alt="forward icon" src="forward.png"></img>
+          </div>
+        </PartItem>
+        <PartItem onClick={()=>{ router.push('/category/part4') }}>
+          <div className="background">
+          <div className="cardText">
+            <div className="cardTitle">PART4 학습하기</div>
+            <div className="cardDescription">정보를 사용해 답하기</div>
+          </div>
+          <img className="forward" alt="forward icon" src="forward.png"></img>
+          </div>
+        </PartItem>
+        <PartItem onClick={()=>{ router.push('/category/part5') }}>
+          <div className="background">
+          <div className="cardText">
+            <div className="cardTitle">PART5 학습하기</div>
+            <div className="cardDescription">의견 제시하기</div>
+          </div>
+          <img className="forward" alt="forward icon" src="forward.png"></img>
+          </div>
+        </PartItem>
+      </PartList>
+    </StyledScreen>
   );
 };
