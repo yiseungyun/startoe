@@ -7,13 +7,11 @@ const ScreenWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
 `;
 
 const DivWrapper = styled.div`
   background-color: #ffffff;
   height: 852px;
-  width: 393px;
 `;
 
 const LectureWrapper = styled.div`
@@ -21,7 +19,7 @@ const LectureWrapper = styled.div`
   left: 34px;
   position: absolute;
   top: 610px;
-  width: 100%;
+  width: 90%;
 `;
 
 const OverlapGroupWrapper = styled.div`
@@ -29,7 +27,7 @@ const OverlapGroupWrapper = styled.div`
   border-radius: 10px;
   height: 130px;
   position: relative;
-  width: 82%;
+  width: 92%;
 `;
 
 const YoungWomanGiving = styled.img`
@@ -57,7 +55,7 @@ const ApplyTestWrapper = styled.div`
   left: 34px;
   position: absolute;
   top: 455px;
-  width: 100%;
+  width: 90%;
 `;
 
 const PiggyBankWith = styled.img`
@@ -73,7 +71,7 @@ const LearningDayWrapper = styled.div`
   left: 34px;
   position: absolute;
   top: 300px;
-  width: 100%;
+  width: 90%;
 `;
 
 const BooksGraduationHat = styled.img`
@@ -170,6 +168,7 @@ const Title = styled.div`
 export const Main = () => {
   const router = useRouter()
   return (
+    <>
     <ScreenWrapper>
       <DivWrapper>
         <LectureWrapper onClick={()=>{ router.push('/lecture') }}>
@@ -226,5 +225,6 @@ export const Main = () => {
         </MainWrapper>
       </OverlapWrapper>
     </ScreenWrapper>
+    </>
   );
 };

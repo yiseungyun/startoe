@@ -7,12 +7,14 @@ const StyledScreen = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  height: 100vh;
 
   & .main {
-    height: 305px;
     width: 207px;
     position: absolute;
-    top: 26%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   & .rocket {
     height: 200px;
@@ -33,7 +35,6 @@ const StyledScreen = styled.div`
 
 export const Test = () => {
   return (
-    <>
     <StyledScreen>
       <div className="main">
         <img className="rocket" alt="Rocket" src="rocket.png" />
@@ -44,6 +45,5 @@ export const Test = () => {
         </p>
       </div>
     </StyledScreen>
-    </>
   );
 };
