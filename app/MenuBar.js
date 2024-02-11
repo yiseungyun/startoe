@@ -6,7 +6,7 @@ const MenuWrapper = styled.div`
   background-color: #ffffff;
   height: 80px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 0;
@@ -14,7 +14,7 @@ const MenuWrapper = styled.div`
   right: 0; 
   margin-left: auto; 
   margin-right: auto; 
-  width: 94%;
+  width: 100%;
 `;
 
 const ButtonWrapper = styled.div`
@@ -23,7 +23,7 @@ const ButtonWrapper = styled.div`
   align-items: center;
   height: 59px;
   top: 11px;
-  width: 41px;
+  width: 18%;
 `;
 
 const TestImg = styled.img`
@@ -77,23 +77,23 @@ export const MenuBar = () => {
     <>
       <MenuWrapper>
         <ButtonWrapper onClick={()=>{ router.push('/') }}>
-          <HomeImg alt="Material symbols" src="home-unclick.png" />
+          <HomeImg alt="Material symbols" src="/home-unclick.png" />
           <MenuText>홈</MenuText>
         </ButtonWrapper>
         <ButtonWrapper onClick={()=>{ router.push('/category') }}>
-          <CategoryImg alt="Mingcute menu fill" src="category-unclick.png" />
+          <CategoryImg alt="Mingcute menu fill" src="/category-unclick.png" />
           <MenuText>카테고리</MenuText>
         </ButtonWrapper>
         <ButtonWrapper onClick={()=>{ router.push('/bookmark') }}>
-          <BookmarkImg alt="Unclick bookmark" src="bookmark-unclick.png" />
+          <BookmarkImg alt="Unclick bookmark" src="/bookmark-unclick.png" />
           <MenuText>북마크</MenuText>
         </ButtonWrapper>
         <ButtonWrapper onClick={()=>{ router.push('/test') }}>
-          <TestImg alt="Ion search" src="test-unclick.png" />
+          <TestImg alt="Ion search" src="/test-unclick.png" />
           <MenuText>테스트</MenuText>
         </ButtonWrapper>    
         <ButtonWrapper onClick={()=>{ router.push('/profile') }}>
-          <ProfileImg alt="Icon park solid" src="profile-unclick.png" />
+          <ProfileImg alt="Icon park solid" src="/profile-unclick.png" />
           <MenuText>프로필</MenuText>
         </ButtonWrapper>
       </MenuWrapper>
