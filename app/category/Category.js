@@ -73,7 +73,7 @@ const PartItem = styled.div`
   & .forward {
     height: 102px;
     width: 72px;
-    opacity: 0.8;
+    opacity: 0.65;
   }
 `
 
@@ -84,6 +84,15 @@ export const Category = () => {
       <TitleText>파트별 학습하기</TitleText>
       <LearningImage alt="Learning image" src="learning.png"/>
       <PartList>
+        <PartItem onClick={()=>{ router.push('/category/expression') }}>
+          <div className="background">
+          <div className="cardText">
+            <div className="cardTitle">표현 학습하기</div>
+            <div className="cardDescription">자주 나오는 표현</div>
+          </div>
+          <img className="forward" alt="forward icon" src="forward.png"/>
+          </div>
+        </PartItem>
         <PartItem onClick={()=>{ router.push('/category/part2') }}>
           <div className="background">
           <div className="cardText">
