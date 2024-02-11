@@ -85,7 +85,7 @@ export const Category = () => {
       <TitleText>파트별 학습하기</TitleText>
       <LearningImage alt="Learning image" src="learning.png"/>
       <PartList>
-        <PartItem onClick={()=>{ router.push('/category/expression') }}>
+        <PartItem onClick={()=>{ router.push('/category/template') }}>
           <div className="background">
           <div className="cardText">
             <div className="cardTitle">문장구조 학습하기</div>
