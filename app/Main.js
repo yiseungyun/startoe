@@ -7,6 +7,7 @@ const ScreenWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
 `;
 
 const DivWrapper = styled.div`
