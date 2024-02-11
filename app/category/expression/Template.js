@@ -58,10 +58,10 @@ const StyledScreen = styled.div`
   }
 `
 
-export default function Expression() {
+export default function Template() {
   return (
     <StyledScreen>
-      <div className="title">표현</div>
+      <div className="title">문장구조</div>
       <div className="card-list">
         <div className="card">
           <div className="card-text">
