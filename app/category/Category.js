@@ -42,7 +42,7 @@ const PartItem = styled.div`
     display: flex;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0px 0px 3px 1px #0000001a;
+    box-shadow: 0px 0px 2.3px 0.7px rgb(0, 0, 0, 0.1);
     height: 112px;
     padding: 0 -10%;
   }
@@ -56,24 +56,25 @@ const PartItem = styled.div`
     font-size: 25px;
     font-weight: 600;
     line-height: normal;
-    padding-left: 14%;
+    padding-left: 12%;
     padding-top: 5px;
     white-space: nowrap;
   }
   & .cardDescription {
     color: #868686;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 550;
     margin-top: 1%;
-    padding-left: 14%;
+    padding-left: 12%;
     line-spacing: 0;
     line-height: normal;
     white-space: nowrap;
   }
   & .forward {
-    height: 102px;
-    width: 72px;
-    opacity: 0.65;
+    height: 47px;
+    width: 43px;
+    padding-left: 8px;
+    opacity: 0.9;
   }
 `
 
@@ -87,8 +88,8 @@ export const Category = () => {
         <PartItem onClick={()=>{ router.push('/category/expression') }}>
           <div className="background">
           <div className="cardText">
-            <div className="cardTitle">표현 학습하기</div>
-            <div className="cardDescription">자주 나오는 표현</div>
+            <div className="cardTitle">문장구조 학습하기</div>
+            <div className="cardDescription">자주 나오는 문장구조 학습하기</div>
           </div>
           <img className="forward" alt="forward icon" src="forward.png"/>
           </div>

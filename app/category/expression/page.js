@@ -1,9 +1,9 @@
-import Expression from "./Expression";
+import Template from "./Template";
 
 export default function expression() {
   return (
     <>
-      <Expression/>
+      <Template/>
     </>
   );
 }
