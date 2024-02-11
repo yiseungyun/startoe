@@ -1,5 +1,6 @@
 'use client'
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { styled } from "styled-components";
 
 const DivWrapperContainer = styled.div`
@@ -11,7 +12,7 @@ const DivWrapperContainer = styled.div`
   .title {
     height: 202px;
     position: absolute;
-    top: 16%;
+    top: 20%;
     width: 255px;
     display: flex;
     flex-direction: row;
@@ -41,7 +42,7 @@ const DivWrapperContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     height: 58px;
-    bottom: 15.5%;
+    bottom: 18%;
     width: 234px;
   }
   & .icon {
@@ -54,7 +55,7 @@ const DivWrapperContainer = styled.div`
   }
   & .sign-button {
     position: absolute;
-    bottom: 25%;
+    bottom: 27%;
   }
   & .sign-background {
     background-color: #3681D9;
@@ -80,6 +81,7 @@ const DivWrapperContainer = styled.div`
 `
 
 export default function NotLogin() {
+  const router = useRouter();
   return (
     <DivWrapperContainer>
       <div className="title">
@@ -88,11 +90,10 @@ export default function NotLogin() {
       </div>
       <div className="sign">
         <div className="sign-button">
-          <div className="sign-background">
+          <div className="sign-background" onClick={()=>{
+            router.push('/login')
+          }}>
             <div className="div">로그인</div>
-          </div>
-          <div className="sign-background">
-            <div className="div">회원가입</div>
           </div>
         </div>
         <div className="social">

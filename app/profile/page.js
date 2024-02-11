@@ -5,6 +5,7 @@ import Profile from "./Profile";
 
 export default async function profile() {
   const session = await getServerSession(authOptions)
+  
   return (
     <>
       {

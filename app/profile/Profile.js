@@ -9,28 +9,30 @@ const DivWrapperContainer = styled.div`
   justify-content: center;
   position: relative;
   height: 100vh;
+  width: 100%;
 
   & .welcomeDiv {
     display: flex;
+    width: 100%;
+    justify-content: center;
   }
   & .welcomeText {
     color: #353535;
     font-size: 32px;
     font-weight: 700;
-    left: 31.5px;
-    display: inline-block;
+    white-space: nowrap;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
+    position: flex;
     text-align: center;
     padding-top: 35px;
+    padding-right: 10px;
   }
   & .welcomeImg {
     width: 60px;
     height: 90px;
     margin-top: 10px;
-    position: absolute;
-    left: 270px;
+    position: flex;
   }
   & .sign {
     display: flex;
