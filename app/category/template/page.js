@@ -1,6 +1,6 @@
 import Template from "./Template";
 
-export default function expression() {
+export default function template() {
   return (
     <>
       <Template/>
