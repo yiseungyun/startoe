@@ -42,7 +42,7 @@ const YoungWomanGiving = styled.img`
 const TextWrapper = styled.div`
   color: #353535;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 640;
   right: 9.3%;
   letter-spacing: 0;
   line-height: normal;
@@ -118,7 +118,7 @@ const DescriptionWrapper = styled.div`
 const MainTextWrapper = styled.div`
   color: #101010;
   font-size: 29px;
-  font-weight: 600;
+  font-weight: 650;
   left: 0;
   letter-spacing: 0;
   line-height: normal;
@@ -157,7 +157,7 @@ const UnderLine = styled.div`
 const Title = styled.div`
   color: #1967c2;
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 750;
   left: 6px;
   letter-spacing: 0;
   line-height: normal;
