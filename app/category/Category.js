@@ -72,7 +72,7 @@ const PartItem = styled.div`
   }
   & .forward {
     height: 47px;
-    width: 43px;
+    width: 40px;
     padding-left: 8px;
     opacity: 0.9;
   }
