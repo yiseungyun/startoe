@@ -192,14 +192,14 @@ export const Main = () => {
               <br />
               접수하기
             </TextWrapper>
-            <PiggyBankWith alt="Piggy bank with" src="piggy-bank-with-coins.png" />
+            <PiggyBankWith alt="Piggy bank with" src="/piggy-bank-with-coins.png" />
           </OverlapGroupWrapper>
         </ApplyTestWrapper>
         <LearningDayWrapper>
           <OverlapGroupWrapper>
             <BooksGraduationHat
               alt="Books graduation hat"
-              src="books-graduation-hat-and-diploma-scroll.png"
+              src="/books-graduation-hat-and-diploma-scroll.png"
             />
             <TextWrapper>
               연속학습
@@ -210,7 +210,7 @@ export const Main = () => {
         </LearningDayWrapper>
       </DivWrapper>
       <OverlapWrapper>
-        <CatLiesOnOpen alt="Cat lies on open" src="cat-lies-on-open-books.png" />
+        <CatLiesOnOpen alt="Cat lies on open" src="/cat-lies-on-open-books.png" />
         <MainWrapper>
           <DescriptionWrapper>
             <MainTextWrapper style={{top: '90px'}}>시작하다</MainTextWrapper>
