@@ -97,7 +97,12 @@ export default function NotLogin() {
           </div>
         </div>
         <div className="social">
-          <img className="icon" src="google.png"/>
+          <img className="icon" src="google.png" onClick={()=>{
+            signIn("google", {
+              redirect: true,
+              callbackUrl: '/',
+            })
+          }}/>
           <img className="icon" src="kakao.png" onClick={()=>{
             signIn("kakao", {
               redirect: true,

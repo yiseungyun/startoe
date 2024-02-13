@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import KaKaoProvider from "next-auth/providers/kakao"
+import GoogleProvider from 'next-auth/providers/google'
 
 export const authOptions = {
   providers: [
@@ -7,6 +8,10 @@ export const authOptions = {
       clientId: process.env.KAKAO_CLIENT_ID,
       clientSecret: process.env.KAKAO_CLIENT_SECRET, 
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+    })
   ],
   callbacks: {
     async session(session, user) {
