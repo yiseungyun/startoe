@@ -192,7 +192,7 @@ export const Main = () => {
               <br />
               접수하기
             </TextWrapper>
-            <PiggyBankWith alt="Piggy bank with" src="/piggy-bank-with-coins.png" />
+            <PiggyBankWith alt="Piggy bank with" src="/Piggy-bank-with-coins.png" />
           </OverlapGroupWrapper>
         </ApplyTestWrapper>
         <LearningDayWrapper>
