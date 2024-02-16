@@ -6,12 +6,14 @@ const StyledScreen = styled.div`
   margin-top: 30px;
   height: 100vh;
   width: 100%;
+  max-width: var(--pc-width-size);
+  min-width: var(--min-width-size);
 
   & .bookmark-text {
     color: #353535;
     font-size: 32px;
     font-weight: 700;
-    left: 30px;
+    padding-left: 30px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -20,7 +22,7 @@ const StyledScreen = styled.div`
   }
   & .bookmark-img {
     height: 100px;
-    left: 125px;
+    padding-left: 125px;
     position: absolute;
     width: 135px;
   }

@@ -12,7 +12,11 @@ const ScreenWrapper = styled.div`
 
 const DivWrapper = styled.div`
   background-color: #ffffff;
-  height: 852px;
+  width: 100%;
+  max-width: var(--pc-width-size);
+  min-width: var(--min-width-size);
+  position: absolute;
+  min-height: 870px;
 `;
 
 const LectureWrapper = styled.div`
@@ -85,15 +89,16 @@ const BooksGraduationHat = styled.img`
 
 const OverlapWrapper = styled.div`
   height: 240px;
-  left: 32px;
   position: absolute;
   top: 43px;
   width: 90%;
+  max-width: var(--pc-width-size);
+  min-width: var(--min-width-size);
 `;
 
 const CatLiesOnOpen = styled.img`
   height: 162px;
-  right: 0%;
+  right: 1%;
   position: absolute;
   top: 68px;
   width: 193px;
@@ -101,7 +106,7 @@ const CatLiesOnOpen = styled.img`
 
 const MainWrapper = styled.div`
   height: 195px;
-  left: 0;
+  left: 6%;
   position: absolute;
   top: 5px;
   width: 220px;
@@ -169,7 +174,6 @@ const Title = styled.div`
 export const Main = () => {
   const router = useRouter()
   return (
-    <>
     <ScreenWrapper>
       <DivWrapper>
         <LectureWrapper onClick={()=>{ router.push('/lecture') }}>
@@ -180,7 +184,7 @@ export const Main = () => {
             />
             <TextWrapper>
               토익스피킹
-              <br />
+              <br/>
               강의 듣기
             </TextWrapper>
           </OverlapGroupWrapper>
@@ -189,7 +193,7 @@ export const Main = () => {
           <OverlapGroupWrapper>
             <TextWrapper>
               토익스피킹
-              <br />
+              <br/>
               접수하기
             </TextWrapper>
             <PiggyBankWith alt="Piggy bank with" src="/Piggy-bank-with-coins.png" />
@@ -203,7 +207,7 @@ export const Main = () => {
             />
             <TextWrapper>
               연속학습
-              <br />
+              <br/>
               0일차
             </TextWrapper>
           </OverlapGroupWrapper>
@@ -226,6 +230,5 @@ export const Main = () => {
         </MainWrapper>
       </OverlapWrapper>
     </ScreenWrapper>
-    </>
   );
 };

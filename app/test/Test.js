@@ -13,8 +13,7 @@ const StyledScreen = styled.div`
     width: 207px;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-0%, -50%);
   }
   & .rocket {
     height: 200px;

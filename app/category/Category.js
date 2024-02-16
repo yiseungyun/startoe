@@ -4,13 +4,15 @@ import styled from "styled-components";
 
 const StyledScreen = styled.div`
   margin-top: 30px;
+  max-width: var(--pc-width-size);
+  min-width: var(--min-width-size);
 `
 
 const TitleText = styled.div`
   color: #353535;
   font-size: 32px;
   font-weight: 700;
-  left: 31.5px;
+  padding-left: 31.5px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -20,7 +22,7 @@ const TitleText = styled.div`
 
 const LearningImage = styled.img`
   height: 106px;
-  left: 237px;
+  padding-left: 237px;
   position: absolute;
   top: 28px;
   width: 123px;
@@ -31,20 +33,25 @@ const PartList = styled.div`
   display: flex;
   flex-direction: column;
   top: 165px;
-  left: 24px;
-  width: 87%;
+  width: 98%;
+  padding-left: 1%;
   padding-bottom: 80px;
+  max-width: var(--pc-width-size);
+  min-width: var(--min-width-size);
 `
 
 const PartItem = styled.div`
   margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  width: 94%;
   .background {
     display: flex;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0px 0px 2.3px 0.7px rgb(0, 0, 0, 0.1);
     height: 112px;
-    padding: 0 -10%;
+    width: 90%;
   }
   & .cardText {
     width: 80%;

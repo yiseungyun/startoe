@@ -9,12 +9,12 @@ const MenuWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
-  left: 0;  
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
+  margin: 0 auto;
   width: 100%;
+  max-width: var(--pc-width-size);
 `;
 
 const ButtonWrapper = styled.div`
@@ -74,29 +74,27 @@ const HomeImg = styled.img`
 export const MenuBar = () => {
   const router = useRouter();
   return (
-    <>
-      <MenuWrapper>
-        <ButtonWrapper onClick={()=>{ router.push('/') }}>
-          <HomeImg alt="Material symbols" src="/home-unclick.png" />
-          <MenuText>홈</MenuText>
-        </ButtonWrapper>
-        <ButtonWrapper onClick={()=>{ router.push('/category') }}>
-          <CategoryImg alt="Mingcute menu fill" src="/category-unclick.png" />
-          <MenuText>카테고리</MenuText>
-        </ButtonWrapper>
-        <ButtonWrapper onClick={()=>{ router.push('/bookmark') }}>
-          <BookmarkImg alt="Unclick bookmark" src="/bookmark-unclick.png" />
-          <MenuText>북마크</MenuText>
-        </ButtonWrapper>
-        <ButtonWrapper onClick={()=>{ router.push('/test') }}>
-          <TestImg alt="Ion search" src="/test-unclick.png" />
-          <MenuText>테스트</MenuText>
-        </ButtonWrapper>    
-        <ButtonWrapper onClick={()=>{ router.push('/profile') }}>
-          <ProfileImg alt="Icon park solid" src="/profile-unclick.png" />
-          <MenuText>프로필</MenuText>
-        </ButtonWrapper>
-      </MenuWrapper>
-    </>
+    <MenuWrapper>
+      <ButtonWrapper onClick={()=>{ router.push('/') }}>
+        <HomeImg alt="Material symbols" src="/home-unclick.png" />
+        <MenuText>홈</MenuText>
+      </ButtonWrapper>
+      <ButtonWrapper onClick={()=>{ router.push('/category') }}>
+        <CategoryImg alt="Mingcute menu fill" src="/category-unclick.png" />
+        <MenuText>카테고리</MenuText>
+      </ButtonWrapper>
+      <ButtonWrapper onClick={()=>{ router.push('/bookmark') }}>
+        <BookmarkImg alt="Unclick bookmark" src="/bookmark-unclick.png" />
+        <MenuText>북마크</MenuText>
+      </ButtonWrapper>
+      <ButtonWrapper onClick={()=>{ router.push('/test') }}>
+        <TestImg alt="Ion search" src="/test-unclick.png" />
+        <MenuText>테스트</MenuText>
+      </ButtonWrapper>    
+      <ButtonWrapper onClick={()=>{ router.push('/profile') }}>
+        <ProfileImg alt="Icon park solid" src="/profile-unclick.png" />
+        <MenuText>프로필</MenuText>
+      </ButtonWrapper>
+    </MenuWrapper>
   );
 };

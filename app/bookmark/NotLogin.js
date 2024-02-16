@@ -13,8 +13,7 @@ const StyledScreen = styled.div`
     width: 255px;
     position: absolute;
     top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-0%, -50%);
   }
   & .error {
     height: 200px;

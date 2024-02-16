@@ -10,7 +10,7 @@ const StyledScreen = styled.div`
     color: #353535;
     font-size: 32px;
     font-weight: 680;
-    padding-left: 20px;
+    padding-left: 31.5px;
     letter-spacing: 0;
     line-height: normal;
     padding-top: 15px;

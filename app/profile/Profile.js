@@ -25,13 +25,13 @@ const DivWrapperContainer = styled.div`
     line-height: normal;
     position: flex;
     text-align: center;
-    padding-top: 35px;
+    padding-top: 50px;
     padding-right: 10px;
   }
   & .welcomeImg {
     width: 60px;
     height: 90px;
-    margin-top: 10px;
+    margin-top: 25px;
     position: flex;
   }
   & .sign {
