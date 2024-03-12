@@ -1,7 +1,7 @@
 'use client'
 import styled from "styled-components";
 
-const StyledScreen = styled.div`
+const Container = styled.div`
   width: 100%;
   height: 100vh;
   margin-top: 45px;
@@ -10,7 +10,7 @@ const StyledScreen = styled.div`
     color: #353535;
     font-size: 32px;
     font-weight: 680;
-    padding-left: 31.5px;
+    padding-left: 26px;
     letter-spacing: 0;
     line-height: normal;
     padding-top: 15px;
@@ -20,7 +20,6 @@ const StyledScreen = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    padding-bottom: 100px;
   }
   & .card-text {
     width: 83%;
@@ -48,7 +47,6 @@ const StyledScreen = styled.div`
     font-weight: 470;
     font-size: 20px;
     margin-top: -10px;
-
   }
   & .heart {
     width: 42px;
@@ -58,10 +56,10 @@ const StyledScreen = styled.div`
   }
 `
 
-export default function Template() {
+export default function Part(props) {
   return (
-    <StyledScreen>
-      <div className="title">문장구조</div>
+    <Container>
+      <div className="title">{props.title}</div>
       <div className="card-list">
         <div className="card">
           <div className="card-text">
@@ -78,6 +76,6 @@ export default function Template() {
           <img className="heart" src="/heart-unclick.png"/>
         </div>
       </div>
-    </StyledScreen>
+    </Container>
   );
 }

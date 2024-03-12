@@ -3,6 +3,7 @@ import "./globals.css";
 import StyledComponentsRegistry from './lib/registry'
 import { MenuBar } from "./MenuBar";
 import AuthSession from "./provider/sessionProvider";
+import RecoilRootWrapper from "./recoil/RecoilRootWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,12 +25,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthSession>
-          <StyledComponentsRegistry>
-            {children}
-            <MenuBar/>
-          </StyledComponentsRegistry>
-        </AuthSession>
+        <RecoilRootWrapper>
+          <AuthSession>
+            <StyledComponentsRegistry>
+              {children}
+              <MenuBar/>
+            </StyledComponentsRegistry>
+          </AuthSession>
+        </RecoilRootWrapper>
       </body>
     </html>
   );

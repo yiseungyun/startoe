@@ -13,19 +13,17 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
     })
   ],
-  callbacks: {
-    async session(session, user) {
-      session.user = user;
+  session: {
+    strategy: 'jwt',
+    maxAge: 30 * 24 * 60 * 60
+  },
+  callbacks: { // 유저 정보 DB 만들고 수정하기
+    session: async ({ session }) => {
       return session;
     },
-    async jwt(token, user) {
-      if (user) {
-        token.email = user.email;
-        token.name = user.name;
-        token.image = user.image;
-      }
+    jwt: async ({ token }) => { 
       return token;
-    }
+    },
   },
   secret : process.env.NEXTAUTH_SECRET,
 }

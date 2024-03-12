@@ -2,14 +2,15 @@
 import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
-const StyledScreen = styled.div`
+const Container = styled.div`
   margin-top: 30px;
   height: 100vh;
   width: 100%;
   max-width: var(--pc-width-size);
   min-width: var(--min-width-size);
+  position: relative;
 
-  & .bookmark-text {
+  .bookmark-text {
     color: #353535;
     font-size: 32px;
     font-weight: 700;
@@ -20,25 +21,24 @@ const StyledScreen = styled.div`
     text-align: center;
     padding-top: 32px;
   }
-  & .bookmark-img {
+  .bookmark-img {
     height: 100px;
     padding-left: 125px;
     position: absolute;
     width: 135px;
   }
-  & .card-list {
+  .card-list {
     display: flex;
     flex-direction: column;
-    padding-bottom: 100px;
     padding-top: 110px;
     padding-bottom: 80px;
   }
-  & .card-text {
+  .card-text {
     width: 83%;
     padding-right: 8px;
   }
-  & .card {
-    width: 86%;
+  .card {
+    width: calc(100% - 55px);
     background-color: rgb(26, 103, 195, 0.1);
     padding-left: 20px;
     border-radius: 10px;
@@ -47,20 +47,20 @@ const StyledScreen = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
-  & .card-Eng {
+  .card-Eng {
     color: #353535;
     width: 100%;
     font-weight: 560;
     font-size: 22px;
   }
-  & .card-Kor {
+  .card-Kor {
     color: #424242;
     width: 100%;
     font-weight: 470;
     font-size: 20px;
     margin-top: -10px;
   }
-  & .heart {
+  .heart {
     width: 42px;
     height: 42px;
     padding-right: 13px;
@@ -70,8 +70,9 @@ const StyledScreen = styled.div`
 
 export const Bookmark = () => {
   const router = useRouter()
+
   return (
-    <StyledScreen>
+    <Container>
       <div className="bookmark-text">북마크</div>
       <img className="bookmark-img" alt="Bookmark image" src="/bookmark.png"/>
       <div className="card-list">
@@ -90,6 +91,6 @@ export const Bookmark = () => {
           <img className="heart" src="/heart-click.png"/>
         </div>
       </div>
-    </StyledScreen>
+    </Container>
   );
 };

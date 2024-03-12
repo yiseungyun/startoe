@@ -1,9 +1,9 @@
-import Template from "./Template";
+import Part from "../Part";
 
 export default function template() {
   return (
     <>
-      <Template/>
+      <Part title="문장구조"/>
     </>
   );
 }

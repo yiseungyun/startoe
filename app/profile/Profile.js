@@ -2,7 +2,7 @@
 import { signOut } from "next-auth/react";
 import { styled } from "styled-components";
 
-const DivWrapperContainer = styled.div`
+const Container = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -11,12 +11,12 @@ const DivWrapperContainer = styled.div`
   height: 100vh;
   width: 100%;
 
-  & .welcomeDiv {
+  .welcome-box {
     display: flex;
     width: 100%;
     justify-content: center;
   }
-  & .welcomeText {
+  .welcome-text {
     color: #353535;
     font-size: 32px;
     font-weight: 700;
@@ -28,36 +28,40 @@ const DivWrapperContainer = styled.div`
     padding-top: 50px;
     padding-right: 10px;
   }
-  & .welcomeImg {
+  .welcome-img {
     width: 60px;
     height: 90px;
     margin-top: 25px;
     position: flex;
   }
-  & .sign {
+  .sign {
     display: flex;
     justify-content: center;
     position: absolute;
     bottom: 20%;
     margin-bottom: 20px;
+    width: 100%;
   }
-  & .sign-button {
+  .sign-button {
     position: absolute;
+    width: 100%;
   }
-  & .sign-background {
-    background-color: #3681D9;
-    border-radius: 15px;
-    width: 275px;
+  .sign-background {
+    background-color: var(--primary);
+    border-radius: 12px;
+    width: 100%;
     height: 53px;
     display: flex;
     justify-content: center;
     position: relative;
+    margin: auto;
     margin-bottom: 12px;
+    width: calc(100% - 60px);
   }
-  & .div {
+  .div {
     color: #ffffff;
     font-size: 21px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -69,10 +73,10 @@ const DivWrapperContainer = styled.div`
 
 export default function Profile() {
   return (
-    <DivWrapperContainer>
-      <div className="welcomeDiv">
-        <div className="welcomeText">회원님, 반가워요 !</div>
-        <img className="welcomeImg" src="cat.png"/>
+    <Container>
+      <div className="welcome-box">
+        <div className="welcome-text">회원님, 반가워요 !</div>
+        <img className="welcome-img" src="cat.png"/>
       </div>
       <div className="sign" onClick={()=>{
           signOut({
@@ -86,6 +90,6 @@ export default function Profile() {
           </div>
         </div>
       </div>
-    </DivWrapperContainer>
+    </Container>
   );
 }

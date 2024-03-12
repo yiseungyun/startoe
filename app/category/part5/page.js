@@ -1,9 +1,9 @@
-import Part5 from "./Part5";
+import Part from "../Part";
 
 export default function part5() {
   return (
     <>
-      <Part5/>
+      <Part title="PART5"/>
     </>
   );
 }

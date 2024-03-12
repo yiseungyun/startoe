@@ -2,13 +2,13 @@
 import { useRouter } from "next/navigation";
 import { styled } from "styled-components";
 
-const StyledScreen = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 100vh;
   
-  & .title {
+  .title {
     position: absolute;
     font-size: 33px;
     font-weight: 700;
@@ -16,15 +16,15 @@ const StyledScreen = styled.div`
     line-height: normal;
     white-space: nowrap;
   }
-  & .divWrapper {
+  .div-wrapper {
     position: relative;
     top: 20%;
   }
-  & .login-form {
+  .login-form {
     position: relative;
     top: 12%;
   }
-  & .login-input {
+  .login-input {
     border-color: #3681D9;
     opacity: 0.7;
     width: 270px;
@@ -33,11 +33,11 @@ const StyledScreen = styled.div`
     padding-bottom: 10px;
     border-width: 0 0 1.5px;
   }
-  & .sign-button {
+  .sign-button {
     position: absolute;
     margin-top: 50px;
   }
-  & .sign-background {
+  .sign-background {
     background-color: #3681D9;
     border-radius: 15px;
     width: 275px;
@@ -47,7 +47,7 @@ const StyledScreen = styled.div`
     position: relative;
     margin-bottom: 12px;
   }
-  & .div {
+  .div {
     color: #ffffff;
     font-size: 21px;
     font-weight: 600;
@@ -58,18 +58,18 @@ const StyledScreen = styled.div`
     top: 14px;
     withe-space: nowrap;
   }
-  & .signup-div {
+  .signup-div {
     position: absolute;
     width: 100%;
     margin-top: 132px;
   }
-  & .text1 {
+  .text1 {
     font-size: 19px;
     font-weight: 500;
     color: #353535;
     text-align: center;
   }
-  & .text2 {
+  .text2 {
     font-size: 21px;
     font-weight: 600;
     color: #1A67C3;
@@ -80,9 +80,10 @@ const StyledScreen = styled.div`
 
 export default function Login() {
   const router = useRouter()
+
   return (
-    <StyledScreen>
-      <div className="divWrapper">
+    <Container>
+      <div className="div-wrapper">
         <div className="title">로그인</div>
         <div className="login-form">
           <form action="">
@@ -105,6 +106,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </StyledScreen>
+    </Container>
   );
 }

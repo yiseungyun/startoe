@@ -1,7 +1,7 @@
 'use client'
 import styled from "styled-components";
 
-const StyledScreen = styled.div`
+const Container = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -9,21 +9,21 @@ const StyledScreen = styled.div`
   width: 100%;
   height: 100vh;
 
-  & .main {
+  .main {
     width: 207px;
     position: absolute;
     top: 50%;
     transform: translate(-0%, -50%);
   }
-  & .rocket {
+  .rocket {
     height: 200px;
     witdh: 135px;
     display: block;
     margin: auto;
   }
-  & .text-wrapper {
+  .text-wrapper {
     color: #353535;
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 600;
     left: 0;
     letter-spacing: 0;
@@ -34,7 +34,7 @@ const StyledScreen = styled.div`
 
 export const Test = () => {
   return (
-    <StyledScreen>
+    <Container>
       <div className="main">
         <img className="rocket" alt="Rocket" src="rocket.png" />
         <p className="text-wrapper">
@@ -43,6 +43,6 @@ export const Test = () => {
           조금 이따 만나요!
         </p>
       </div>
-    </StyledScreen>
+    </Container>
   );
 };

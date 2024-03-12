@@ -3,71 +3,57 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { styled } from "styled-components";
 
-const DivWrapperContainer = styled.div`
+const Container = styled.div`
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 100vh;
+  width: 100%;
+  max-width: var(--pc-width-size);
+  min-width: var(--min-width-size);
 
   .title {
     height: 202px;
     position: absolute;
-    top: 20%;
+    top: 23%;
     width: 255px;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  & .description {
+  .description {
     color: #353535;
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 600;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
     text-align: center;
-    top: 171px;
     white-space: nowrap;
   }
-  & .image {
-    height: 144px;
-    left: 52px;
-    position: absolute;
-    top: 0;
-    width: 150px;
-  }
-  & .social {
+  .social {
     position: absolute;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
     height: 58px;
-    bottom: 18%;
-    width: 234px;
+    bottom: 170px;
+    width: 100%;
+    max-width: var(--pc-width-size);
+    min-width: var(--min-width-size);
   }
-  & .icon {
-    height: 50px;
-    width: 50px;
-  }
-  & .sign {
-    display: flex;
-    justify-content: center;
-  }
-  & .sign-button {
-    position: absolute;
-    bottom: 27%;
-  }
-  & .sign-background {
-    background-color: #3681D9;
-    border-radius: 15px;
-    width: 275px;
-    height: 53px;
-    display: flex;
-    justify-content: center;
-    position: relative;
+  .icon {
+    width: calc(100% - 60px);
+    margin: auto;
     margin-bottom: 12px;
   }
-  & .div {
+  .sign {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .div {
     color: #ffffff;
     font-size: 21px;
     font-weight: 600;
@@ -82,20 +68,13 @@ const DivWrapperContainer = styled.div`
 
 export default function NotLogin() {
   const router = useRouter();
+  
   return (
-    <DivWrapperContainer>
+    <Container>
       <div className="title">
-        <div className="description">로그인 후 이용해주세요</div>
-        <img className="image" src="book-and-bulb.png"/>
+        
       </div>
       <div className="sign">
-        <div className="sign-button">
-          <div className="sign-background" onClick={()=>{
-            router.push('/login')
-          }}>
-            <div className="div">로그인</div>
-          </div>
-        </div>
         <div className="social">
           <img className="icon" src="google.png" onClick={()=>{
             signIn("google", {
@@ -109,9 +88,8 @@ export default function NotLogin() {
               callbackUrl: '/',
             })
           }}/>
-          <img className="icon" src="github.png"/>
         </div>
       </div>
-    </DivWrapperContainer>
+    </Container>
   );
 }

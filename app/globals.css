@@ -1,6 +1,8 @@
 :root {
   --pc-width-size: 480px;
-  --min-width-size: 350px;
+  --min-width-size: 340px;
+  --primary: #4B82C1;
+  --main-text: #4278B7;
 }
 
 @media (min-width: 480px) {
@@ -8,9 +10,10 @@
     max-width: var(--pc-width-size);
     height: 100vh;
     margin: 0 auto;
+    background-color: #F9F9F9;
   }
 } 
-@media (max-width: 350px) {
+@media (max-width: 340px) {
   body {
     min-width: var(--min-width-size);
     height: 100vh;

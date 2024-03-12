@@ -1,14 +1,14 @@
 'use client'
 import { styled } from "styled-components";
 
-const StyledScreen = styled.div`
+const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
 
-  & .title {
+  .title {
     position: absolute;
     font-size: 33px;
     font-weight: 700;
@@ -16,15 +16,15 @@ const StyledScreen = styled.div`
     line-height: normal;
     white-space: nowrap;
   }
-  & .divWrapper {
+  .div-wrapper {
     position: relative;
     top: 20%;
   }
-  & .signup-form {
+  .signup-form {
     position: relative;
     top: 12%;
   }
-  & .signup-input {
+  .signup-input {
     border-color: #3681D9;
     opacity: 0.7;
     width: 270px;
@@ -33,11 +33,11 @@ const StyledScreen = styled.div`
     padding-bottom: 10px;
     border-width: 0 0 1.5px;
   }
-  & .sign-button {
+  .sign-button {
     position: absolute;
     margin-top: 50px;
   }
-  & .sign-background {
+  .sign-background {
     background-color: #3681D9;
     border-radius: 15px;
     width: 275px;
@@ -47,7 +47,7 @@ const StyledScreen = styled.div`
     position: relative;
     margin-bottom: 12px;
   }
-  & .div {
+  .div {
     color: #ffffff;
     font-size: 21px;
     font-weight: 600;
@@ -62,8 +62,8 @@ const StyledScreen = styled.div`
 
 export default function SignUp() {
   return (
-    <StyledScreen>
-      <div className="divWrapper">
+    <Container>
+      <div className="div-wrapper">
         <div className="title">회원가입</div>
         <div className="signup-form">
           <form action="">
@@ -80,6 +80,6 @@ export default function SignUp() {
           </div>
         </div>
       </div>
-    </StyledScreen>
+    </Container>
   );
 }
