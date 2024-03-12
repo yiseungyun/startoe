@@ -1,6 +1,7 @@
 'use client'
 import { signOut } from "next-auth/react";
 import { styled } from "styled-components";
+import Button from "./Button";
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -46,29 +47,6 @@ const Container = styled.div`
     position: absolute;
     width: 100%;
   }
-  .sign-background {
-    background-color: var(--primary);
-    border-radius: 12px;
-    width: 100%;
-    height: 53px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin: auto;
-    margin-bottom: 12px;
-    width: calc(100% - 60px);
-  }
-  .div {
-    color: #ffffff;
-    font-size: 21px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 14px;
-    withe-space: nowrap;
-  }
 `
 
 export default function Profile() {
@@ -85,9 +63,7 @@ export default function Profile() {
           })
         }}>
         <div className="sign-button">
-          <div className="sign-background">
-            <div className="div">로그아웃</div>
-          </div>
+          <Button text="로그아웃"/>
         </div>
       </div>
     </Container>

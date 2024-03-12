@@ -27,7 +27,7 @@ const ButtonWrapper = styled.div`
   top: 11px;
   width: 18%;
 
-  .menuText {
+  .menu-text {
     color: ${(props) => 
       props.text === "click"
         ? 'var(--primary)'
@@ -43,31 +43,31 @@ const ButtonWrapper = styled.div`
     bottom: 9px;
   }
 
-  .testImg {
+  .test-img {
     height: 32px;
     position: absolute;
     top: 11px;
     width: 32px;
   }
-  .categoryImg {
+  .category-img {
     height: 31px;
     position: absolute;
     top: 12px;
     width: 33px;
   }
-  .profileImg {
+  .profile-img {
     height: 32px;
     position: absolute;
     top: 11px;
     width: 32px;
   }
-  .bookmarkImg {
+  .bookmark-img {
     height: 32px;
     position: absolute;
     top: 11px;
     width: 26px;
   }
-  .homeImg {
+  .home-img {
     height: 33px;
     position: absolute;
     top: 11px;
@@ -98,35 +98,35 @@ export const MenuBar = () => {
 
   return (
     <MenuWrapper>
-      <ButtonWrapper onClick={()=>{   
+      <ButtonWrapper text={click[0]} onClick={()=>{   
         router.push('/');
         }}>
-        <img className="homeImg" alt="home icon" src={`/home-${click[0]}.png`}/>
-        <div className="menuText" text="click">홈</div>
+        <img className="home-img" alt="home icon" src={`/home-${click[0]}.png`}/>
+        <div className="menu-text">홈</div>
       </ButtonWrapper>
-      <ButtonWrapper onClick={()=>{
+      <ButtonWrapper text={click[1]} onClick={()=>{
         router.push('/category');
         }}>
-        <img className="categoryImg" alt="category icon" src={`/category-${click[1]}.png`}/>
-        <div className="menuText" text={click[1]}>카테고리</div>
+        <img className="category-img" alt="category icon" src={`/category-${click[1]}.png`}/>
+        <div className="menu-text">카테고리</div>
       </ButtonWrapper>
-      <ButtonWrapper onClick={()=>{ 
+      <ButtonWrapper text={click[2]} onClick={()=>{ 
         router.push('/bookmark');
         }}>
-        <img className="bookmarkImg" alt="bookmark icon" src={`/bookmark-${click[2]}.png`}/>
-        <div className="menuText" text={click[2]}>북마크</div>
+        <img className="bookmark-img" alt="bookmark icon" src={`/bookmark-${click[2]}.png`}/>
+        <div className="menu-text">북마크</div>
       </ButtonWrapper>
-      <ButtonWrapper onClick={()=>{ 
+      <ButtonWrapper text={click[3]} onClick={()=>{ 
         router.push('/test');
         }}>
-        <img className="testImg" alt="test icon" src={`/test-${click[3]}.png`}/>
-        <div className="menuText" text={click[3]}>테스트</div>
+        <img className="test-img" alt="test icon" src={`/test-${click[3]}.png`}/>
+        <div className="menu-text">테스트</div>
       </ButtonWrapper>    
-      <ButtonWrapper onClick={()=>{ 
+      <ButtonWrapper text={click[4]} onClick={()=>{ 
         router.push('/profile');
          }}>
-        <img className="profileImg" alt="profile icon" src={`/profile-${click[4]}.png`}/>
-        <div className="menuText" text={click[4]}>프로필</div>
+        <img className="profile-img" alt="profile icon" src={`/profile-${click[4]}.png`}/>
+        <div className="menu-text">프로필</div>
       </ButtonWrapper>
     </MenuWrapper>
   );
