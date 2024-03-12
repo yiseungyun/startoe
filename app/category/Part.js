@@ -4,9 +4,10 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  margin-top: 45px;
+  padding-top: 45px;
+  background-color: #ffffff;
 
-  & .title {
+  .title {
     color: #353535;
     font-size: 32px;
     font-weight: 680;
@@ -16,16 +17,16 @@ const Container = styled.div`
     padding-top: 15px;
     padding-bottom: 10px;
   }
-  & .card-list {
+  .card-list {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
   }
-  & .card-text {
+  .card-text {
     width: 83%;
     padding-right: 8px;
   }
-  & .card {
+  .card {
     width: 86%;
     background-color: rgb(26, 103, 195, 0.1);
     padding-left: 20px;
@@ -35,20 +36,20 @@ const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
-  & .card-Eng {
+  .card-Eng {
     color: #353535;
     width: 100%;
     font-weight: 560;
     font-size: 22px;
   }
-  & .card-Kor {
+  .card-Kor {
     color: #424242;
     width: 100%;
     font-weight: 470;
     font-size: 20px;
     margin-top: -10px;
   }
-  & .heart {
+  .heart {
     width: 42px;
     height: 42px;
     padding-right: 13px;

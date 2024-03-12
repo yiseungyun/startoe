@@ -3,12 +3,13 @@ import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin-top: 30px;
+  padding-top: 30px;
   height: 100vh;
   width: 100%;
   max-width: var(--pc-width-size);
   min-width: var(--min-width-size);
   position: relative;
+  background-color: #ffffff;
 
   .bookmark-text {
     color: #353535;
