@@ -1,7 +1,7 @@
 'use client'
 import Part from "../Part";
 import { useQuery } from "@tanstack/react-query"
-import { getLearningData } from "@/app/api/getData";
+import { getLearningData } from "@/pages/data/getData";
 
 export default function template() {
   const {data, error, isLoading} = useQuery({
