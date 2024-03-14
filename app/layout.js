@@ -2,8 +2,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from './lib/registry'
 import { MenuBar } from "./MenuBar";
-import AuthSession from "./provider/sessionProvider";
-import RecoilRootWrapper from "./recoil/RecoilRootWrapper";
+import ReactQueryProviders from "./lib/reactqueryProvider";
+import AuthSession from "./lib/sessionProvider";
+import RecoilRootWrapper from "./lib/RecoilRootWrapper";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,17 +24,21 @@ export const viewport = {
   // interactiveWidget: 'resizes-visual',
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const session = await getServerSession(authOptions)
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <RecoilRootWrapper>
-          <AuthSession>
-            <StyledComponentsRegistry>
-              {children}
-              <MenuBar/>
-            </StyledComponentsRegistry>
-          </AuthSession>
+          <ReactQueryProviders>
+            <AuthSession>
+              <StyledComponentsRegistry>
+                {children}
+                {session ? <MenuBar/> : null}
+              </StyledComponentsRegistry>
+            </AuthSession>
+          </ReactQueryProviders>
         </RecoilRootWrapper>
       </body>
     </html>

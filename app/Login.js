@@ -1,6 +1,5 @@
 'use client'
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { styled } from "styled-components";
 import SocialLogin from "./SocialLogin";
 
@@ -37,7 +36,7 @@ const Container = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
-    bottom: 15%;
+    bottom: 30px;
     width: 100%;
     max-width: var(--pc-width-size);
     min-width: var(--min-width-size);
@@ -50,14 +49,15 @@ const Container = styled.div`
   }
 `
 
-export default function NotLogin() {
-  const router = useRouter();
-  
+const Body = styled.div``
+
+export default function Login() {
+
   return (
     <Container>
-      <div className="title">
+      <Body>
         
-      </div>
+      </Body>
       <div className="sign">
         <div className="social">
           <SocialLogin className="icon" text="구글로 로그인" type="google" onClick={()=>{

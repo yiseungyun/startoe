@@ -15,17 +15,16 @@ const Container = styled.div`
   .welcome-box {
     display: flex;
     width: 100%;
-    justify-content: center;
+    padding-left: 32px;
   }
   .welcome-text {
     color: #353535;
-    font-size: 32px;
+    font-size: 31px;
     font-weight: 700;
     white-space: nowrap;
     letter-spacing: 0;
     line-height: normal;
     position: flex;
-    text-align: center;
     padding-top: 50px;
     padding-right: 10px;
   }

@@ -50,7 +50,8 @@ const PartItem = styled.div`
     border-radius: 10px;
     box-shadow: 0px 0px 2.3px 0.7px rgb(0, 0, 0, 0.1);
     height: 112px;
-    width: calc(100% - 40px);
+    position: relative;
+    width: calc(100% - 50px);
   }
   .card-text {
     width: 80%;
@@ -77,10 +78,12 @@ const PartItem = styled.div`
     white-space: nowrap;
   }
   .forward {
-    height: 47px;
-    width: 40px;
-    padding-left: 8px;
+    width: 100%;
+    position: absolute;
+    height: 41px;
+    width: 33px;
     opacity: 0.9;
+    right: 4%;
   }
 `
 

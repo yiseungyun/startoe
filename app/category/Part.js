@@ -1,9 +1,12 @@
 'use client'
+import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { bookmarkState } from "../recoil/StartoeAtom";
+import LearningCard from "./LearningCard"
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
   padding-top: 45px;
   background-color: #ffffff;
 
@@ -21,61 +24,46 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    padding-bottom: 100px;
   }
-  .card-text {
-    width: 83%;
-    padding-right: 8px;
-  }
-  .card {
-    width: 86%;
-    background-color: rgb(26, 103, 195, 0.1);
-    padding-left: 20px;
-    border-radius: 10px;
-    display: flex;
-    margin-bottom: 18px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .card-Eng {
-    color: #353535;
-    width: 100%;
-    font-weight: 560;
-    font-size: 22px;
-  }
-  .card-Kor {
-    color: #424242;
-    width: 100%;
-    font-weight: 470;
-    font-size: 20px;
-    margin-top: -10px;
-  }
-  .heart {
-    width: 42px;
-    height: 42px;
-    padding-right: 13px;
-    margin: auto;
+  .no-content {
+    height: calc(100vh - 267px);
   }
 `
 
-export default function Part(props) {
+export default function Part({title, data}) {
+  const [bookmark, setBookmark] = useRecoilState(bookmarkState);
+  const title_dict = {"문장구조": "template", "PART2": "part2", "PART3": "part3", "PART4": "part4", "PART5": "part5"};
+
+  const handleBookmark = (id) => {
+    const isBookmark = bookmark[title_dict[title]].indexOf(id);
+    let update = [...bookmark[title_dict[title]]]
+    if (isBookmark === -1) {
+      update.push(id);
+    } else {
+      update = update.filter((item) => item !== id);
+    }
+    setBookmark({
+      ...bookmark,
+      [title_dict[title]]: update
+    });
+  }
+
   return (
     <Container>
-      <div className="title">{props.title}</div>
+      <div className="title">{title}</div>
       <div className="card-list">
-        <div className="card">
-          <div className="card-text">
-            <p className="card-Eng">There are 2 people in this picture.</p>
-            <p className="card-Kor">사진에 2명의 사람이 있습니다.</p>
-          </div>
-          <img className="heart" src="/heart-unclick.png"/>
-        </div>
-        <div className="card">
-          <div className="card-text">
-            <p className="card-Eng">There are 2 people in this picture.</p>
-            <p className="card-Kor">사진에 2명의 사람이 있습니다.</p>
-            </div>
-          <img className="heart" src="/heart-unclick.png"/>
-        </div>
+        {
+          data ?
+            data.map((a, i) => {
+              return (
+                <LearningCard content={a} key={i+1} bookmark={bookmark[title_dict[title]].indexOf(i+1) !== -1} onClick={() => {
+                  handleBookmark(a.id);
+                }}/>
+              )
+            })
+            : <div className="no-content"></div>
+        }
       </div>
     </Container>
   );
