@@ -1,4 +1,3 @@
-'use client'
 import axios from "axios"
 
 const database_url = process.env.DATABASE_URL
