@@ -160,7 +160,7 @@ export const Main = () => {
               alt="education image"
               src="/books-graduation-hat-and-diploma-scroll.png"
             />
-            <div className="card-text">연속학습<br/>0일차</div>
+            <div className="card-text">토익스피킹<br/>알아보기</div>
           </div>
         </div>
         <div className="card" onClick={()=>{ window.open('https://www.toeicswt.co.kr/receipt/receiptStep1.php') }}>
