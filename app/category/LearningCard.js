@@ -39,7 +39,7 @@ const Container = styled.div`
 
 export default function LearningCard({ bookmark, content, onClick }) {
   return (
-    <Container click={bookmark.toString()}>
+    <Container $click={bookmark.toString()}>
       <div className="card-text">
         <p className="card-Eng">{content.eng}</p>
         <p className="card-Kor">{content.kor}</p>
