@@ -1,5 +1,4 @@
 'use client'
-import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { bookmarkState } from "../recoil/StartoeAtom";
@@ -31,7 +30,7 @@ const Container = styled.div`
   }
 `
 
-export default function Part({title, data}) {
+export default function Part({ title, data }) {
   const [bookmark, setBookmark] = useRecoilState(bookmarkState);
   const title_dict = {"문장구조": "template", "PART2": "part2", "PART3": "part3", "PART4": "part4", "PART5": "part5"};
 

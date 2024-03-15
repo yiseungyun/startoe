@@ -37,14 +37,14 @@ const Container = styled.div`
   .sign {
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 20%;
-    margin-bottom: 20px;
+    position: fixed;
+    bottom: 155px;
     width: 100%;
   }
   .sign-button {
     position: absolute;
     width: 100%;
+    max-width: var(--pc-width-size);
   }
 `
 

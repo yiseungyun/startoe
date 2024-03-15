@@ -5,13 +5,12 @@ import { Main } from "./Main";
 
 export default async function Home() {
   const session = await getServerSession(authOptions)
-
   return (
     <>
       {
         session
         ? <Main/>
-        : <Login/>
+        : <Login session={session}/>
       }
     </>
   );

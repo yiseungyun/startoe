@@ -1,6 +1,9 @@
 'use client'
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { bookmarkState } from "./recoil/StartoeAtom";
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -137,6 +140,11 @@ const CardList = styled.div`
 
 export const Main = () => {
   const router = useRouter()
+  const [bookmark, setBookmark] = useRecoilState(bookmarkState);
+  useEffect(() => {
+    //console.log(session);
+  }, [])
+
   return (
     <Container>
       <Top>

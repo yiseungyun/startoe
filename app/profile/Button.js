@@ -7,9 +7,9 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  margin: auto;
-  margin-bottom: 12px;
   width: calc(100% - 55px);
+  margin: auto;
+  margin-bottom: 0;
   height: 53px;
 
   .div {

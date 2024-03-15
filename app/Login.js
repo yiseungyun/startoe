@@ -63,11 +63,13 @@ const Body = styled.div`
     color: #353535;
     padding-top: 3vh;
     padding-bottom: 3vh;
+    letter-spacing: 0.2vh;
   }
   .logo-text {
     font-size: 3vh;
     font-weight: 540;
     color: #6C9ACF;
+    letter-spacing: 0.1vh;
   }
 `
 
