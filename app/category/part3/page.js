@@ -1,7 +1,7 @@
 'use client'
 import Part from "../Part";
 import { useQuery } from "@tanstack/react-query"
-import { getLearningData } from "@/pages/data/getData";
+import { getLearningData } from "@/app/data/getData";
 
 export default function part3() {
   const {data, error, isLoading} = useQuery({
