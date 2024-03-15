@@ -1,4 +1,5 @@
 'use client'
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { bookmarkState } from "../recoil/StartoeAtom";
@@ -37,16 +38,32 @@ export default function Part({ title, data }) {
   const handleBookmark = (id) => {
     const isBookmark = bookmark[title_dict[title]].indexOf(id);
     let update = [...bookmark[title_dict[title]]]
+    let update_all = [...bookmark.all]
     if (isBookmark === -1) {
       update.push(id);
+      update_all.push([title_dict[title], id]);
     } else {
       update = update.filter((item) => item !== id);
+      update_all = update_all.filter((item) => !(item[0] === title_dict[title] && item[1] === id));
     }
     setBookmark({
       ...bookmark,
+      all: update_all,
       [title_dict[title]]: update
     });
   }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const localStorageBookmark = localStorage.getItem('bookmark');
+      if (localStorageBookmark) {
+        const localItem = JSON.parse(localStorageBookmark);
+        setBookmark(localItem.bookmarkState);
+      } else {
+        setBookmark({ all: [], template: [], part2: [], part3: [], part4: [], part5: [] });
+      }
+    }
+  }, [])
 
   return (
     <Container>
@@ -56,7 +73,7 @@ export default function Part({ title, data }) {
           data ?
             data.map((a, i) => {
               return (
-                <LearningCard content={a} key={i+1} bookmark={bookmark[title_dict[title]].indexOf(i+1) !== -1} onClick={() => {
+                <LearningCard content={a} key={i+1} isClick={bookmark[title_dict[title]].indexOf(i+1) !== -1} onClick={() => {
                   handleBookmark(a.id);
                 }}/>
               )

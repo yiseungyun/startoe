@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const Container = styled.div`
@@ -6,8 +7,10 @@ const Container = styled.div`
   position: relative;
   background-color: rgb(26, 103, 195, 0.1);
   border-radius: 10px;
-  border-left: solid 24px ${({ $click }) => 
-    $click === "true" ? 'rgba(66, 120, 183, 0.75)' : 'rgba(185, 185, 185, 0.6)'
+  border-left: solid 24px ${( {$isClick} ) => 
+    $isClick === "true" ? 
+      'rgba(66, 120, 183, 0.75)' 
+      : 'rgba(185, 185, 185, 0.6)'
   };
   display: flex;
   margin-bottom: 18px;
@@ -37,9 +40,14 @@ const Container = styled.div`
   }
 `
 
-export default function LearningCard({ bookmark, content, onClick }) {
+export default function LearningCard({ isClick, content, onClick }) {
+  const [click, setClick] = useState(isClick);
+  useEffect(() => {
+    setClick(isClick.toString())
+  }, [])
+
   return (
-    <Container $click={bookmark.toString()}>
+    <Container $isClick={click}>
       <div className="card-text">
         <p className="card-Eng">{content.eng}</p>
         <p className="card-Kor">{content.kor}</p>

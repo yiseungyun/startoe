@@ -30,16 +30,16 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StyledComponentsRegistry>
           <RecoilRootWrapper>
               <ReactQueryProviders>
                 <AuthSession>
+                <StyledComponentsRegistry>
                     {children}
                     {session ? <MenuBar/> : null}
+                </StyledComponentsRegistry>
                 </AuthSession>
               </ReactQueryProviders>
           </RecoilRootWrapper>
-        </StyledComponentsRegistry>
       </body>
     </html>
   );

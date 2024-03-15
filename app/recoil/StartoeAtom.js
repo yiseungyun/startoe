@@ -9,13 +9,6 @@ const { persistAtom } = recoilPersist({
 
 export const bookmarkState = atom({
   key: 'bookmarkState',
-  default: {
-    all: [],
-    template: [],
-    part2: [],
-    part3: [],
-    part4: [],
-    part5: []
-  },
+  default: { all: [], template: [], part2: [], part3: [], part4: [], part5: [] },
   effects_UNSTABLE: [persistAtom],
 });
