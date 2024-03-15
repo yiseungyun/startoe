@@ -44,7 +44,7 @@ export default function LearningCard({ isClick, content, onClick }) {
   const [click, setClick] = useState(isClick);
   useEffect(() => {
     setClick(isClick.toString())
-  }, [])
+  }, [isClick])
 
   return (
     <Container $isClick={click}>

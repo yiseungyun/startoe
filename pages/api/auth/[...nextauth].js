@@ -19,6 +19,17 @@ export const authOptions = {
     maxAge: 30 * 24 * 60 * 60
   },
   callbacks: { 
+    async jwt({ token, account, user }) {
+      if (account && user) {
+        token.provider = account.provider;
+        token.user_email = user.email;
+      } 
+      return token;
+    },
+    async session({ session, token }) {
+      session.user_id = token.provider + "/@#" + token.user_email;
+      return session;
+    },
     async signIn({ user, account }) {
       try {
         let client = await connectDB;
@@ -40,19 +51,13 @@ export const authOptions = {
             part5: []
           }
           await db.collection('user').insertOne(user_info);
-          await db.collection('bookmark').insertOne(bookmark_list)
+          await db.collection('bookmark').insertOne(bookmark_list);
         } 
         return true;
       } catch (error) {
         console.log(error);
         return false;
       }
-    },
-    async session({ session }) {
-      return session;
-    },
-    async jwt({ token }) { 
-      return token;
     },
   },
   secret : process.env.NEXTAUTH_SECRET,

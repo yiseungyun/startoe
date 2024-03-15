@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { bookmarkState } from "../recoil/StartoeAtom";
+import { bookmarkState } from "../recoil/bookmarkAtom";
 import LearningCard from "./LearningCard"
 
 const Container = styled.div`
@@ -51,19 +51,11 @@ export default function Part({ title, data }) {
       all: update_all,
       [title_dict[title]]: update
     });
-  }
+  };
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const localStorageBookmark = localStorage.getItem('bookmark');
-      if (localStorageBookmark) {
-        const localItem = JSON.parse(localStorageBookmark);
-        setBookmark(localItem.bookmarkState);
-      } else {
-        setBookmark({ all: [], template: [], part2: [], part3: [], part4: [], part5: [] });
-      }
-    }
-  }, [])
+  /*useEffect(() => {
+    // 마운트 될때 로컬 스토리지에 있는 값 가져와서 데이터베이스 저장..? 
+  })*/
 
   return (
     <Container>

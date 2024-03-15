@@ -3,7 +3,8 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { bookmarkState } from "./recoil/StartoeAtom";
+import { bookmarkState } from "./recoil/bookmarkAtom";
+import { userState } from "./recoil/userAtom";
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -138,11 +139,25 @@ const CardList = styled.div`
   }
 `;
 
-export const Main = () => {
+export const Main = ({ user_info }) => {
   const router = useRouter()
-  const [bookmark, setBookmark] = useRecoilState(bookmarkState);
+  const [, setUser] = useRecoilState(userState);
+  const [, setBookmark] = useRecoilState(bookmarkState);
   useEffect(() => {
-    //console.log(session);
+    if (!localStorage.getItem('bookmark')) {
+      setBookmark({
+        all: user_info.all,
+        template: user_info.template,
+        part2: user_info.part2,
+        part3: user_info.part3,
+        part4: user_info.part4,
+        part5: user_info.part5
+      });
+    }
+    if (!localStorage.getItem('userInfo')) {
+      localStorage.setItem('userInfo', JSON.stringify(user_info.user_id))
+      setUser(user_info.user_id);
+    }
   }, [])
 
   return (
