@@ -59,7 +59,7 @@ const Body = styled.div`
     position: absolute;
     width: 31vh;
     left: 3.5vh;
-    padding-top: 29vh;
+    padding-top: 25vh;
   }
 `
 
