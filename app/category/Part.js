@@ -1,7 +1,9 @@
 'use client'
-import { useEffect } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { postBookmarkData } from "../api/postData";
 import { bookmarkState } from "../recoil/bookmarkAtom";
 import LearningCard from "./LearningCard"
 
@@ -34,6 +36,7 @@ const Container = styled.div`
 export default function Part({ title, data }) {
   const [bookmark, setBookmark] = useRecoilState(bookmarkState);
   const title_dict = {"문장구조": "template", "PART2": "part2", "PART3": "part3", "PART4": "part4", "PART5": "part5"};
+  const [user_id, setUser_id] = useState(null);
 
   const handleBookmark = (id) => {
     const isBookmark = bookmark[title_dict[title]].indexOf(id);
@@ -53,9 +56,23 @@ export default function Part({ title, data }) {
     });
   };
 
-  /*useEffect(() => {
-    // 마운트 될때 로컬 스토리지에 있는 값 가져와서 데이터베이스 저장..? 
-  })*/
+  useEffect(() => {
+    setUser_id(localStorage.getItem('userInfo'));
+  }, [typeof window])
+
+  const mutation = useMutation({
+    mutationFn: () => postBookmarkData( { bookmark, user_id }), 
+    onSuccess: (data) => {
+      console.log(data)
+    },
+    onError: (error) => {
+      console.log(error);
+    }
+  })
+
+  useEffect(() => {
+    mutation.mutate();
+  }, [])
 
   return (
     <Container>

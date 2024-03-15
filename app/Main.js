@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { bookmarkState } from "./recoil/bookmarkAtom";
-import { userState } from "./recoil/userAtom";
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -141,7 +140,6 @@ const CardList = styled.div`
 
 export const Main = ({ user_info }) => {
   const router = useRouter()
-  const [, setUser] = useRecoilState(userState);
   const [, setBookmark] = useRecoilState(bookmarkState);
   useEffect(() => {
     if (!localStorage.getItem('bookmark')) {
@@ -156,7 +154,6 @@ export const Main = ({ user_info }) => {
     }
     if (!localStorage.getItem('userInfo')) {
       localStorage.setItem('userInfo', JSON.stringify(user_info.user_id))
-      setUser(user_info.user_id);
     }
   }, [])
 
