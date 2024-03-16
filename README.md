@@ -10,9 +10,10 @@
 - Design: `styled components`
 - Login: `OAuth 2.0`
 - State Management: `Recoil`, `React Query(Tanstack Query v5)`
-- Data Fetching : `Axios`, `React Query(Tanstack Query v5)`
-- Design Tool : `Figma`
-- Deploy : `Vercel`
+- Data Fetching: `Axios`, `React Query(Tanstack Query v5)`
+- Database: `MongoDB`
+- Design Tool: `Figma`
+- Deploy: `Vercel`
 ## 주요 기능
 ### 로그인/로그아웃
 ![image](https://github.com/yiseungyun/startoe/assets/73896327/b8beb7e7-60b5-4b5c-8e33-3c7ca89ea520)
