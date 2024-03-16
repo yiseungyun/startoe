@@ -62,7 +62,7 @@ export default function Part({ title, data }) {
   const mutation = useMutation({
     mutationFn: () => postBookmarkData( { bookmark, user_id }), 
     onSuccess: (data) => {
-      //console.log(data)
+      console.log(data)
     },
     onError: (error) => {
       console.log(error);
@@ -70,7 +70,7 @@ export default function Part({ title, data }) {
   })
 
   useEffect(() => {
-    mutation.mutate();
+    return () => mutation.mutate();
   }, [])
 
   return (

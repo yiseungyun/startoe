@@ -1,13 +1,13 @@
-import { connectDB } from "../util/database";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
 import { Bookmark } from "./Bookmark";
 
 export default async function bookmark() {
-  let client = await connectDB;
-  const db = client.db('startoe');
+  const session = await getServerSession(authOptions);
 
   return (
     <>
-      <Bookmark/>
+      <Bookmark user_id={session.user_id}/>
     </>
   );
 }

@@ -143,14 +143,15 @@ export const Main = ({ user_info }) => {
   const [, setBookmark] = useRecoilState(bookmarkState);
   useEffect(() => {
     if (!localStorage.getItem('bookmark')) {
-      setBookmark({
+      const bookmarkState = {
         all: user_info.all,
         template: user_info.template,
         part2: user_info.part2,
         part3: user_info.part3,
         part4: user_info.part4,
         part5: user_info.part5
-      });
+      }
+      setBookmark(bookmarkState);
     }
     if (!localStorage.getItem('userInfo')) {
       localStorage.setItem('userInfo', JSON.stringify(user_info.user_id))

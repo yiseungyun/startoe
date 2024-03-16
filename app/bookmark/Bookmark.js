@@ -1,7 +1,8 @@
 'use client'
-import { useQueries } from "@tanstack/react-query";
+import { useMutation, useQueries } from "@tanstack/react-query";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { postBookmarkData } from "../api/bookmark";
 import { getLearningOneData } from "../api/data";
 import { bookmarkState } from "../recoil/bookmarkAtom";
 import LearningCard from "./LearningCard";
@@ -40,7 +41,7 @@ const Container = styled.div`
   }
 `
 
-export const Bookmark = () => {
+export const Bookmark = ({ user_id }) => {
   const [bookmark, setBookmark] = useRecoilState(bookmarkState);
 
   const getBookmark = useQueries({
@@ -59,6 +60,16 @@ export const Bookmark = () => {
     }
   });
 
+  const mutation = useMutation({
+    mutationFn: () => postBookmarkData( { bookmark, user_id }), 
+    onSuccess: (data) => {
+      console.log(data)
+    },
+    onError: (error) => {
+      console.log(error);
+    }
+  })
+
   const deleteBookmark = (category, id) => {
     let update = [...bookmark[category]]
     let update_all = [...bookmark.all]
@@ -69,6 +80,7 @@ export const Bookmark = () => {
       all: update_all,
       [category]: update
     });
+    mutation.mutate();
   };
  
   return (

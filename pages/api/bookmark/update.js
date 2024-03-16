@@ -3,7 +3,7 @@ import { connectDB } from "@/app/util/database"
 export default async function handler(request, response) {
   const data = request.body.bookmark;
   let user = request.body.user_id;
-  const user_id = String(user).slice(1, -1);
+  const user_id = String(user).replaceAll('"', "");
   if (request.method === 'POST') {
     try {
       let client = await connectDB;
