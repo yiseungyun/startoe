@@ -10,11 +10,11 @@ const Container = styled.div`
   width: calc(100% - 55px);
   margin: auto;
   margin-bottom: 0;
-  height: 53px;
+  height: 45px;
 
   .div {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: normal;

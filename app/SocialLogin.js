@@ -14,15 +14,15 @@ const Container = styled.div`
   margin: auto;
   margin-bottom: 12px;
   width: calc(100% - 55px);
-  height: 53px;
+  height: 45px;
 
   .icon {
     position: absolute;
-    left: 25px;
+    left: 23px;
     top: 50%;
     transform: translate(0, -50%);
-    height: 30px;
-    width: 30px;
+    height: 23px;
+    width: 23px;
   }
   .logo {
     width: 100%;
@@ -31,7 +31,7 @@ const Container = styled.div`
   .div {
     width: calc(100% - 70px);
     color: #0A0A0A;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: normal;

@@ -38,7 +38,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     position: fixed;
-    bottom: 155px;
+    bottom: 145px;
     width: 100%;
   }
   .sign-button {

@@ -43,7 +43,7 @@ const Container = styled.div`
   .sign {
     position: fixed;
     display: flex;
-    bottom: 25px;
+    bottom: 20px;
     justify-content: center;
     width: 100%;
   }
