@@ -35,7 +35,7 @@ const ButtonWrapper = styled.div`
     font-size: 14px;
     font-weight: ${({ $text }) => 
       $text === "click"
-        ? '600'
+        ? '700'
         : '500' };
     letter-spacing: 0;
     line-height: normal;
@@ -44,34 +44,34 @@ const ButtonWrapper = styled.div`
   }
 
   .test-img {
-    height: 32px;
+    height: 30px;
     position: absolute;
-    top: 11px;
-    width: 32px;
+    top: 11.5px;
+    width: 30px;
   }
   .category-img {
-    height: 31px;
+    height: 29px;
     position: absolute;
-    top: 12px;
-    width: 33px;
+    top: 12.5px;
+    width: 31px;
   }
   .profile-img {
-    height: 32px;
+    height: 30px;
     position: absolute;
     top: 11px;
-    width: 32px;
+    width: 30px;
   }
   .bookmark-img {
+    height: 30px;
+    position: absolute;
+    top: 12px;
+    width: 24px;
+  }
+  .home-img {
     height: 32px;
     position: absolute;
     top: 11px;
-    width: 26px;
-  }
-  .home-img {
-    height: 33px;
-    position: absolute;
-    top: 11px;
-    width: 32px;
+    width: 30px;
   }
 `;
 
