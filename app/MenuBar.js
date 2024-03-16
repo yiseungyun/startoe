@@ -82,7 +82,7 @@ export const MenuBar = () => {
 
   useEffect(()=>{
     let update = ['unclick', 'unclick', 'unclick', 'unclick', 'unclick'];
-    if (pathname === '/' || pathname === '/lecture') {
+    if (pathname === '/' || pathname === '/lecture' || pathname === '/information') {
       update[0] = 'click';
     } else if (pathname.substring(0, 9) === '/category') {
       update[1] = 'click';
