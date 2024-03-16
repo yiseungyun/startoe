@@ -2,7 +2,7 @@
 import { useQueries } from "@tanstack/react-query";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { getLearningOneData } from "../api/getData";
+import { getLearningOneData } from "../api/data";
 import { bookmarkState } from "../recoil/bookmarkAtom";
 import LearningCard from "./LearningCard";
 

@@ -1,4 +1,3 @@
-'use client'
 import axios from "axios"
 
 export const postBookmarkData = async (data) => {
