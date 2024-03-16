@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { postBookmarkData } from "../api/postData";
+import { postBookmarkData } from "../api/bookmark";
 import { bookmarkState } from "../recoil/bookmarkAtom";
 import LearningCard from "./LearningCard"
 
