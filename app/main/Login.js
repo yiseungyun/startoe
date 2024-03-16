@@ -1,7 +1,7 @@
 'use client'
 import { signIn } from "next-auth/react";
 import { styled } from "styled-components";
-import SocialLogin from "../SocialLogin";
+import SocialLogin from "./SocialLogin";
 
 const Container = styled.div`
   background-color: #ffffff;
