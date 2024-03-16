@@ -6,7 +6,7 @@ const Container = styled.div`
   position: relative;
   background-color: rgb(26, 103, 195, 0.1);
   border-radius: 10px;
-  border-left: solid 24px rgba(185, 185, 185, 0.7);;
+  border-left: solid 24px rgba(66, 120, 183, 0.75);
   display: flex;
   margin-bottom: 18px;
   margin-left: auto;
@@ -35,7 +35,7 @@ const Container = styled.div`
   }
 `
 
-export default function LearningCard({ content }) {
+export default function LearningCard({ content, onClick }) {
 
   return (
     <Container>
@@ -43,7 +43,7 @@ export default function LearningCard({ content }) {
         <p className="card-Eng">{content.eng}</p>
         <p className="card-Kor">{content.kor}</p>
       </div>
-      <div className="bookmark"/>
+      <div className="bookmark" onClick={()=> onClick()}/>
     </Container>
   );
 }

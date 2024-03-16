@@ -43,8 +43,8 @@ export default function Part({ title, data }) {
     let update = [...bookmark[title_dict[title]]]
     let update_all = [...bookmark.all]
     if (isBookmark === -1) {
-      update.push(id);
-      update_all.push([title_dict[title], id]);
+      update = [id, ...update];
+      update_all = [[title_dict[title], id], ...update_all];
     } else {
       update = update.filter((item) => item !== id);
       update_all = update_all.filter((item) => !(item[0] === title_dict[title] && item[1] === id));
