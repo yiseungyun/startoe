@@ -7,8 +7,6 @@ const Container = styled.div`
   max-width: var(--pc-width-size);
   min-width: var(--min-width-size);
   position: relative;
-  background-color: #ffffff;
-  height: 100vh;
 
   .title-text {
     color: #353535;
@@ -32,7 +30,7 @@ const Container = styled.div`
 const PartList = styled.div`
   background-color: #ffffff;
   position: absolute;
-  top: 170px;
+  padding-top: 35px;
   padding-bottom: 80px;
   width: 100%;
   max-width: var(--pc-width-size);
@@ -70,7 +68,7 @@ const PartItem = styled.div`
   .card-description {
     color: #868686;
     font-size: 19px;
-    font-weight: 550;
+    font-weight: 500;
     margin-top: 1%;
     padding-left: 12%;
     line-spacing: 0;

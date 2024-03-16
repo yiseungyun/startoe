@@ -10,7 +10,6 @@ import LearningCard from "./LearningCard"
 const Container = styled.div`
   width: 100%;
   padding-top: 45px;
-  background-color: #ffffff;
 
   .title {
     color: #353535;
@@ -63,7 +62,7 @@ export default function Part({ title, data }) {
   const mutation = useMutation({
     mutationFn: () => postBookmarkData( { bookmark, user_id }), 
     onSuccess: (data) => {
-      console.log(data)
+      //console.log(data)
     },
     onError: (error) => {
       console.log(error);

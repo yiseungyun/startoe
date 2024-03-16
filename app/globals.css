@@ -6,11 +6,15 @@
 }
 
 @media (min-width: 480px) {
+  html {
+    background-color: #F9F9F9;
+  }
   body {
     max-width: var(--pc-width-size);
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     margin: 0 auto;
-    background-color: #F9F9F9;
+    background-color: #ffffff;
   }
 } 
 @media (max-width: 340px) {
@@ -18,5 +22,6 @@
     min-width: var(--min-width-size);
     height: 100vh;
     margin: 0 auto;
+    background-color: #ffffff;
   }
 }

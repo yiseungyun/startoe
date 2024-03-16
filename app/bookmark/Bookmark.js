@@ -1,6 +1,5 @@
 'use client'
 import { useQueries } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { getLearningOneData } from "../api/getData";
@@ -9,11 +8,11 @@ import LearningCard from "./LearningCard";
 
 const Container = styled.div`
   padding-top: 30px;
-  height: 100vh;
   width: 100%;
   max-width: var(--pc-width-size);
   min-width: var(--min-width-size);
   position: relative;
+  min-height: 100vh;
   background-color: #ffffff;
 
   .bookmark-text {

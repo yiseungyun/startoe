@@ -32,6 +32,7 @@ const LectureList = styled.div`
   position: absolute;
   top: 135px;
   padding-bottom: 80px;
+  background-color: #ffffff;
   width: 100%;
   max-width: var(--pc-width-size);
   min-width: var(--min-width-size);
