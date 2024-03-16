@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import StyledComponentsRegistry from './lib/registry'
+import StyledComponentsRegistry from './lib/StyledComponentsRegistry'
 import { MenuBar } from "./MenuBar";
 import ReactQueryProviders from "./lib/reactqueryProvider";
 import AuthSession from "./lib/sessionProvider";

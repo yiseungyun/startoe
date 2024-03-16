@@ -3,7 +3,8 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { bookmarkState } from "./recoil/bookmarkAtom";
+import { bookmarkState } from "../recoil/bookmarkAtom";
+import MainLogo from "./MainLogo";
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -12,74 +13,6 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-`;
-
-const Top = styled.div`
-  height: 240px;
-  position: absolute;
-  top: 43px;
-  width: calc(100% - 50px);
-  max-width: var(--pc-width-size);
-  min-width: var(--min-width-size);
-
-  .main-div {
-    height: 195px;
-    position: absolute;
-    left: 4%;
-    top: 5px;
-    width: 220px;
-  }
-  .main-character {
-    height: 162px;
-    right: -5px;
-    position: absolute;
-    top: 68px;
-    width: 193px;
-  }
-  .title {
-    height: 61px;
-    position: absolute;
-    width: 152px;
-  }
-  .title-text {
-    color: var(--main-text);
-    font-size: 50px;
-    font-weight: 700;
-    left: 6px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 2px;
-  }
-  .underline {
-    background-color: #f4d5db;
-    height: 15px;
-    position: absolute;
-    top: 44px;
-    width: 141px;
-  }
-  .description {
-    height: 120px;
-    left: 6px;
-    position: absolute;
-    top: 75px;
-    width: 220px;
-  }
-  .description-text {
-    color: #101010;
-    font-size: 29px;
-    font-weight: 600;
-    left: 0;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 6px;
-  }
-  .span {
-    color: var(--primary);
-  }
 `;
 
 const CardList = styled.div`
@@ -160,26 +93,13 @@ export const Main = ({ user_info }) => {
 
   return (
     <Container>
-      <Top>
-        <img className="main-character" alt="main character" src="/cat-lies-on-open-books.png" />
-        <div className="main-div">
-          <div className="description">
-            <div className="description-text">스마트하게</div>
-            <div className="description-text" style={{top: '48px'}}><span className="span">토익스피킹</span> 공부를</div>
-            <div className="description-text" style={{top: '90px'}}>시작하다</div>
-          </div>
-          <div className="title">
-            <div className="underline"/>
-            <div className="title-text">스타토</div>
-          </div>
-        </div>
-      </Top>
+      <MainLogo/>
       <CardList>
         <div className="card">
           <div className="card-box">
             <img className="education-img"
-              alt="education image"
-              src="/books-graduation-hat-and-diploma-scroll.png"
+              alt="information page icon"
+              src="/ts-information.png"
             />
             <div className="card-text" onClick={()=>{ router.push('/information') }}>토익스피킹<br/>알아보기</div>
           </div>
@@ -187,14 +107,14 @@ export const Main = ({ user_info }) => {
         <div className="card" onClick={()=>{ window.open('https://www.toeicswt.co.kr/receipt/receiptStep1.php') }}>
           <div className="card-box">
             <div className="card-text">토익스피킹<br/>접수하기</div>
-            <img className="test-img" alt="test image" src="/Piggy-bank-with-coins.png" />
+            <img className="test-img" alt="test image" src="/ts-register.png" />
           </div>
         </div>
         <div className="card" onClick={()=>{ router.push('/lecture') }}>
           <div className="card-box">
             <img className="lecture-img"
               alt="lecture image"
-              src="young-woman-giving-an-online-lesson.png"
+              src="/ts-lecture.png"
             />
             <div className="card-text">토익스피킹<br/>강의 듣기</div>
           </div>

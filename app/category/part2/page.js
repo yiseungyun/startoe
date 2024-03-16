@@ -8,7 +8,7 @@ export default function part2() {
     queryKey: ["part2data"],
     queryFn: () => getLearningData('part2', '1'),
     suspense: true,
-    staleTime: 5 * 60 * 1000,
+    staleTime: 60 * 60 * 1000,
   })
 
   if (error) return <div></div>

@@ -8,7 +8,7 @@ export default function template() {
     queryKey: ["template_data"],
     queryFn: () => getLearningData('template', '1'),
     suspense: true,
-    staleTime: 5 * 60 * 1000,
+    staleTime: 60 * 60 * 1000,
   })
 
   if (error) return <div></div>

@@ -1,7 +1,7 @@
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
-import Login from "./Login";
-import { Main } from "./Main";
+import Login from "./main/Login";
+import { Main } from "./main/Main";
 import { connectDB } from "./util/database";
 
 export default async function Home() {
