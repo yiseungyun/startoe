@@ -1,5 +1,6 @@
 'use client'
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -17,30 +18,14 @@ const MenuWrapper = styled.div`
   width: 100%;
   max-width: var(--pc-width-size);
   min-width: var(--min-width-size);
-`;
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 59px;
-  top: 11px;
-  width: 18%;
-
-  .menu-text {
-    color: ${({ $text }) => 
-      $text === "click"
-        ? 'var(--primary)'
-        : '#2e2e2e' };
-    font-size: 14px;
-    font-weight: ${({ $text }) => 
-      $text === "click"
-        ? '700'
-        : '500' };
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    bottom: 9px;
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 59px;
+    top: 11px;
+    width: 18%;
   }
 
   .test-img {
@@ -75,10 +60,36 @@ const ButtonWrapper = styled.div`
   }
 `;
 
+const Text = styled.div`
+  color: ${({ $text }) => 
+    $text === "click"
+      ? 'var(--primary)'
+      : '#2e2e2e' };
+  font-size: 14px;
+  font-weight: ${({ $text }) => 
+    $text === "click"
+      ? '700'
+      : '500' };
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  bottom: 9px;
+`
+
 export const MenuBar = () => {
-  const router = useRouter();
   const pathname = usePathname();
-  const [click, setClick] = useState(['unclick', 'unclick', 'unclick', 'unclick', 'unclick']);
+  const [click, setClick] = useState([
+    pathname === '/' || pathname === '/lecture' || pathname === '/information'
+    ? 'click' : 'unclick', 
+    pathname.substring(0, 9) === '/category'
+    ? 'click' : 'unclick', 
+    pathname === '/bookmark'
+    ? 'click' : 'unclick', 
+    pathname === '/test'
+    ? 'click' : 'unclick', 
+    pathname === '/profile' || pathname === '/login' || pathname === '/signup'
+    ? 'click' : 'unclick'
+  ]);
 
   useEffect(()=>{
     let update = ['unclick', 'unclick', 'unclick', 'unclick', 'unclick'];
@@ -98,36 +109,26 @@ export const MenuBar = () => {
 
   return (
     <MenuWrapper>
-      <ButtonWrapper $text={click[0]} onClick={()=>{   
-        router.push('/');
-        }}>
+      <Link className="button" href={'/'}>
         <img className="home-img" alt="home icon" src={`/home-${click[0]}.png`}/>
-        <div className="menu-text">홈</div>
-      </ButtonWrapper>
-      <ButtonWrapper $text={click[1]} onClick={()=>{
-        router.push('/category');
-        }}>
+        <Text className="menu-text" $text={click[0]}>홈</Text>
+      </Link>
+      <Link className="button" href={'/category'}>
         <img className="category-img" alt="category icon" src={`/category-${click[1]}.png`}/>
-        <div className="menu-text">카테고리</div>
-      </ButtonWrapper>
-      <ButtonWrapper $text={click[2]} onClick={()=>{ 
-        router.push('/bookmark');
-        }}>
+        <Text className="menu-text" $text={click[1]}>카테고리</Text>
+      </Link>
+      <Link className="button" href={'/bookmark'}>
         <img className="bookmark-img" alt="bookmark icon" src={`/bookmark-${click[2]}.png`}/>
-        <div className="menu-text">북마크</div>
-      </ButtonWrapper>
-      <ButtonWrapper $text={click[3]} onClick={()=>{ 
-        router.push('/test');
-        }}>
+        <Text className="menu-text" $text={click[2]}>북마크</Text>
+      </Link>
+      <Link className="button" href={'/test'}>
         <img className="test-img" alt="test icon" src={`/test-${click[3]}.png`}/>
-        <div className="menu-text">테스트</div>
-      </ButtonWrapper>    
-      <ButtonWrapper $text={click[4]} onClick={()=>{ 
-        router.push('/profile');
-         }}>
+        <Text className="menu-text" $text={click[3]}>테스트</Text>
+      </Link>
+      <Link className="button" href={'/profile'}>
         <img className="profile-img" alt="profile icon" src={`/profile-${click[4]}.png`}/>
-        <div className="menu-text">프로필</div>
-      </ButtonWrapper>
+        <Text className="menu-text" $text={click[4]}>프로필</Text>
+      </Link>
     </MenuWrapper>
   );
 };
