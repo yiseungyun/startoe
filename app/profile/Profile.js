@@ -15,7 +15,7 @@ const Container = styled.div`
   .welcome-box {
     display: flex;
     width: 100%;
-    padding-left: 32px;
+    padding-left: 7%;
   }
   .welcome-text {
     color: #353535;

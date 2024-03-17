@@ -12,7 +12,7 @@ const Container = styled.div`
     color: #353535;
     font-size: 32px;
     font-weight: 700;
-    padding-left: 31.5px;
+    padding-left: 7%;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -21,7 +21,7 @@ const Container = styled.div`
   }
   .category-img {
     height: 106px;
-    padding-left: 232px;
+    padding-left: calc(7% + 200px);
     top: 28px;
     width: 123px;
   }

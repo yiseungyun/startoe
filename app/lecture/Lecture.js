@@ -13,7 +13,7 @@ const Container = styled.div`
     color: #353535;
     font-size: 32px;
     font-weight: 700;
-    padding-left: 31.5px;
+    padding-left: 7%;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -22,7 +22,7 @@ const Container = styled.div`
   }
   .lecture-img {
     height: 101px;
-    padding-left: 226px;
+    padding-left: calc(7% + 195px);
     position: absolute;
     witdh: 123px;
   }

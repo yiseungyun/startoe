@@ -6,7 +6,7 @@ const Text = styled.div`
   color: #353535;
   font-size: 32px;
   font-weight: 700;
-  padding-left: 31.5px;
+  padding-left: 7%;
   letter-spacing: 0;
   line-height: normal;
   text-align: center;

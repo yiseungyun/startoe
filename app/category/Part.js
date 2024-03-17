@@ -15,7 +15,7 @@ const Container = styled.div`
     color: #353535;
     font-size: 32px;
     font-weight: 680;
-    padding-left: 26px;
+    padding-left: 6%;
     letter-spacing: 0;
     line-height: normal;
     padding-top: 15px;

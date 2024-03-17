@@ -20,7 +20,7 @@ const Container = styled.div`
     color: #353535;
     font-size: 32px;
     font-weight: 700;
-    padding-left: 30px;
+    padding-left: 7%;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -29,7 +29,7 @@ const Container = styled.div`
   }
   .bookmark-img {
     height: 100px;
-    padding-left: 125px;
+    padding-left: calc(7% + 90px);
     position: absolute;
     width: 135px;
   }
