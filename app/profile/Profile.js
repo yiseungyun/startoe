@@ -49,6 +49,15 @@ const Container = styled.div`
 `
 
 export default function Profile() {
+
+  const handleLogout = async () => {
+    localStorage.clear();
+    await signOut({
+      redirect: true,
+      callbackUrl: '/',
+    });
+  };
+
   return (
     <Container>
       <div className="welcome-box">
@@ -56,10 +65,7 @@ export default function Profile() {
         <img className="welcome-img" src="cat.png"/>
       </div>
       <div className="sign" onClick={()=>{
-          signOut({
-            redirect: true,
-            callbackUrl: '/',
-          })
+          handleLogout();
         }}>
         <div className="sign-button">
           <Button text="로그아웃"/>
