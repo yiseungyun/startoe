@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { styled } from "styled-components";
 
 const Container = styled.div`
@@ -71,7 +72,7 @@ const Container = styled.div`
 export default function MainLogo() {
   return (
     <Container>
-      <img className="main-character" alt="main character" src="/main-character.png" />
+      <Image className="main-character" width='193' height='162' alt={"main character"} priority={true} src={"/main-character.png"}/>
       <div className="main-div">
         <div className="description">
           <div className="description-text">스마트하게</div>

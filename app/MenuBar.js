@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -110,23 +111,23 @@ export const MenuBar = () => {
   return (
     <MenuWrapper>
       <Link className="button" href={'/'}>
-        <img className="home-img" alt="home icon" src={`/home-${click[0]}.png`}/>
+        <Image className="home-img" width='30' height='32' alt={"home icon"} priority={true} src={`/home-${click[0]}.png`}/>
         <Text className="menu-text" $text={click[0]}>홈</Text>
       </Link>
       <Link className="button" href={'/category'}>
-        <img className="category-img" alt="category icon" src={`/category-${click[1]}.png`}/>
+        <Image className="category-img" width='31' height='29' alt={"category icon"} priority={true} src={`/category-${click[1]}.png`}/>
         <Text className="menu-text" $text={click[1]}>카테고리</Text>
       </Link>
       <Link className="button" href={'/bookmark'}>
-        <img className="bookmark-img" alt="bookmark icon" src={`/bookmark-${click[2]}.png`}/>
+        <Image className="bookmark-img" width='24' height='30' alt={"bookmark icon"} priority={true} src={`/bookmark-${click[2]}.png`}/>
         <Text className="menu-text" $text={click[2]}>북마크</Text>
       </Link>
       <Link className="button" href={'/test'}>
-        <img className="test-img" alt="test icon" src={`/test-${click[3]}.png`}/>
+        <Image className="test-img" width='30' height='30' alt={"test icon"} priority={true} src={`/test-${click[3]}.png`}/>
         <Text className="menu-text" $text={click[3]}>테스트</Text>
       </Link>
       <Link className="button" href={'/profile'}>
-        <img className="profile-img" alt="profile icon" src={`/profile-${click[4]}.png`}/>
+        <Image className="profile-img" width='30' height='30' alt={"profile icon"} priority={true} src={`/profile-${click[4]}.png`}/>
         <Text className="menu-text" $text={click[4]}>프로필</Text>
       </Link>
     </MenuWrapper>
