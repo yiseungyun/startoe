@@ -3,15 +3,18 @@ import { styled } from "styled-components";
 import InfoCard from "./InfoCard";
 import Top from "./Top";
 
+const Container = styled.div`
+  max-width: var(--pc-width-size); 
+  width: 100%;
+`
 const Cardlist = styled.div`
-  padding-top: 120px;
   padding-bottom: 90px;
 `
 
 export default function information() {
 
   return (
-    <>
+    <Container>
       <Top/>
       <Cardlist>
         <InfoCard 
@@ -34,6 +37,6 @@ export default function information() {
             \nNovice: NL, NM, NH
             "/>
       </Cardlist>
-    </>
+    </Container>
   );
 }
