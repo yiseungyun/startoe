@@ -17,11 +17,9 @@ const Container = styled.div`
     width: 220px;
   }
   .main-character {
-    height: 162px;
     right: -5px;
     position: absolute;
     top: 68px;
-    width: 193px;
   }
   .title {
     height: 61px;

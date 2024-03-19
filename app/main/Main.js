@@ -39,25 +39,19 @@ const CardList = styled.div`
     margin-bottom: 25px;
   }
   .education-img {
-    height: 126px;
     left: 12%;
     position: absolute;
     top: 4px;
-    width: 136px;
   }
   .test-img {
-    height: 101px;
     left: 12%;
     position: absolute;
     top: 20px;
-    width: 128px;
   }
   .lecture-img {
-    height: 106px;
     left: 10%;
     position: absolute;
     top: 16px;
-    width: 127px;
   }
   .card-text {
     color: #353535;
