@@ -28,6 +28,7 @@ const CardList = styled.div`
   .card {
     position: relative;
     width: 100%;
+    cursor: pointer;
   }
   .card-box {
     background-color: #1a67c31a;

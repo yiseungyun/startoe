@@ -14,6 +14,7 @@ const Container = styled.div`
     height: 112px;
     position: relative;
     width: calc(100% - 50px);
+    cursor: pointer;
   }
   .card-text {
     width: 80%;
@@ -53,8 +54,8 @@ export default function PartItem({path, title, description}) {
   const router = useRouter();
   
   return (
-    <Container onClick={()=>{ router.push(path) }}>
-      <div className="background">
+    <Container>
+      <div className="background" onClick={()=>{ router.push(path) }}>
       <div className="card-text">
         <div className="card-title">{title}</div>
         <div className="card-description">{description}</div>
