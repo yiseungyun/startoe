@@ -100,7 +100,7 @@ export const Main = ({ user_info }) => {
     <Container>
       <MainLogo/>
       <CardList>
-        <div className="card" onClick={()=>{ router.prefetch('/information') }}>
+        <div className="card" onClick={()=>{ router.push('/information') }}>
           <div className="card-box">
             <Image className="education-img" width='136' height='126' alt={"information page icon"} priority={true} src={'/ts-information.png'}/>
             <div className="card-text">토익스피킹<br/>알아보기</div>
