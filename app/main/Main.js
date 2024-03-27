@@ -80,7 +80,6 @@ export const Main = ({ user_info }) => {
       part5: user_info.part5
     }
     setBookmark(bookmarkState);
-    localStorage.setItem('bookmark', JSON.stringify(bookmarkState));
     localStorage.setItem('userInfo', JSON.stringify(user_info.user_id))
   }, [])
 
