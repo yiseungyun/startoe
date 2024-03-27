@@ -2,6 +2,8 @@
 > 💡 토익스피킹을 스마트하게 시작하다
 
 토익스피킹 공부를 위한 템플릿을 학습할 수 있는 사이트로, 책을 들고다니거나 태블릿을 들고다니며 공부하지 못할 경우도 많고 불편함도 있기 때문에 휴대폰으로 쉽게 학습할 수 있도록 모바일에 맞추어 디자인하였습니다.
+### 진행 기간
+2024.02.02 ~ 2024.02.20 / 2024.03.13 ~ 2024.03.16
 
 ---
 ## 시스템 아키텍처
@@ -49,6 +51,19 @@
 **테스트 기능 구상 후 추가 예정*
 
 ---
+## 트러블 슈팅
+### ① styled-components FOUC 에러
+[🔗 해결 과정 글 보러가기](https://velog.io/@yiseungyun/Next.js-14%EC%97%90%EC%84%9C-styled-components-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+### ② SSR에서 React query 사용 에러
+[🔗 해결 과정 글 보러가기](https://velog.io/@yiseungyun/Next.js-SSR%EC%97%90%EC%84%9C-React-Query-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+### ③ unknown prop과 정적 스타일링 문제 해결
+[🔗 해결 과정 글 보러가기](https://velog.io/@yiseungyun/Next.js-styled-component%EC%9D%98-unknown-prop)
+___
+## 성능 최적화
+### 2024.03.20 진행 내역
+[🔗 성능 최적화 글 보러가기](https://velog.io/@yiseungyun/Next.js-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0)
+___
+
 ## 앞으로의 계획
 - 학습 데이터 적재 
 - 테스트 기능 추가
