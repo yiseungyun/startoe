@@ -49,6 +49,9 @@ const MenuWrapper = styled.div`
     position: absolute;
     top: 11px;
   }
+  .opacity {
+    opacity: 0;
+  }
 `;
 
 const Text = styled.div`
@@ -94,79 +97,59 @@ export const MenuBar = () => {
   return (
     <MenuWrapper>
       <Link className="button" href={'/'}>
-        {
-          click === 1
-          ? <>
-              <Image className="home-img" width='30' height='32' alt={"home icon"} 
-                priority={true} loading='eager' src={`/home-click.png`}/>
-              <Text className="menu-text" $text="click">홈</Text>
-            </>
-          : <>
-              <Image className="home-img" width='30' height='32' alt={"home icon"} 
-                priority={true} loading='eager' src={`/home-unclick.png`}/>
-              <Text className="menu-text" $text="unclick">홈</Text>
-            </>
-        }
+        <Image className="home-img" width='30' height='32' alt={"home icon"} 
+          priority={true} loading='eager' src={`/home-unclick.png`}/>
+        <Image className={
+          click === 1 ?
+            "home-img"
+            : "home-img opacity"
+          } width='30' height='32' alt={"home icon"} 
+          priority={true} loading='eager' src={`/home-click.png`}/>
+        <Text className="menu-text" $text={ click === 1 ? "click" : "unclick"}>홈</Text>
       </Link>
       <Link className="button" href={'/category'}>
-        {
-          click === 2
-          ? <>
-              <Image className="category-img" width='31' height='29' alt={"category icon"}
-                priority={true} loading='eager' src={`/category-click.png`}/>
-              <Text className="menu-text" $text="click">카테고리</Text>
-            </>
-          : <>
-              <Image className="category-img" width='31' height='29' alt={"category icon"}
-                priority={true} loading='eager' src={`/category-unclick.png`}/>
-              <Text className="menu-text" $text="unclick">카테고리</Text>
-            </>
-        }
+        <Image className="category-img" width='31' height='29' alt={"category icon"}
+          priority={true} loading='eager' src={`/category-unclick.png`}/>
+        <Image className={
+           click === 2 ? 
+            "category-img"
+            : "category-img opacity"
+          } width='31' height='29' alt={"category icon"}
+          priority={true} loading='eager' src={`/category-click.png`}/>
+        <Text className="menu-text" $text={ click === 2 ? "click" : "unclick"}>카테고리</Text>
       </Link>
       <Link className="button" href={'/bookmark'}>
-        {
-          click === 3
-          ? <>
-              <Image className="bookmark-img" width='24' height='30' alt={"bookmark icon"} 
-                priority={true} loading='eager' src={`/bookmark-click.png`}/>
-              <Text className="menu-text" $text="click">북마크</Text>
-            </>
-          : <>
-              <Image className="bookmark-img" width='24' height='30' alt={"bookmark icon"} 
-                priority={true} loading='eager' src={`/bookmark-unclick.png`}/>
-              <Text className="menu-text" $text="unclick">북마크</Text>
-            </>
-        }
+        <Image className="bookmark-img" width='24' height='30' alt={"bookmark icon"} 
+          priority={true} loading='eager' src={`/bookmark-unclick.png`}/>
+        <Image className={
+          click === 3 ? 
+            "bookmark-img"
+            : "bookmark-img opacity"
+          } width='24' height='30' alt={"bookmark icon"} 
+          priority={true} loading='eager' src={`/bookmark-click.png`}/>
+        <Text className="menu-text" $text={ click === 3 ? "click" : "unclick"}>북마크</Text>
       </Link>
       <Link className="button" href={'/test'}>
-        {
-          click === 4
-          ? <>
-              <Image className="test-img" width='30' height='30' alt={"test icon"} 
-                priority={true} loading='eager' src={`/test-click.png`}/>
-              <Text className="menu-text" $text="click">테스트</Text>
-            </>
-          : <>
-              <Image className="test-img" width='30' height='30' alt={"test icon"} 
-                priority={true} loading='eager' src={`/test-unclick.png`}/>
-              <Text className="menu-text" $text="unclick">테스트</Text>
-            </>
-        }
+        <Image className="test-img" width='30' height='30' alt={"test icon"} 
+          priority={true} loading='eager' src={`/test-unclick.png`}/>
+        <Image className={
+          click === 4 ?
+            "test-img"
+            : "test-img opacity"
+          } width='30' height='30' alt={"test icon"} 
+          priority={true} loading='eager' src={`/test-click.png`}/>
+        <Text className="menu-text" $text={ click === 4 ? "click" : "unclick"}>테스트</Text>
       </Link>
       <Link className="button" href={'/profile'}>
-        {
-          click === 5
-          ? <>
-              <Image className="profile-img" width='30' height='30' alt={"profile icon"}
-                priority={true} loading='eager' src={`/profile-click.png`}/>
-              <Text className="menu-text" $text="click">프로필</Text>
-            </>
-          : <>
-              <Image className="profile-img" width='30' height='30' alt={"profile icon"}
-                priority={true} loading='eager' src={`/profile-unclick.png`}/>
-              <Text className="menu-text" $text="unclick">프로필</Text>
-            </>
-        }
+        <Image className="profile-img" width='30' height='30' alt={"profile icon"}
+          priority={true} loading='eager' src={`/profile-unclick.png`}/>
+        <Image className={
+          click === 5 ?
+            "profile-img"
+            : "profile-img opacity"
+          } width='30' height='30' alt={"profile icon"}
+          priority={true} loading='eager' src={`/profile-click.png`}/>
+        <Text className="menu-text" $text={ click === 5 ? "click" : "unclick"}>프로필</Text>
       </Link>
     </MenuWrapper>
   );
