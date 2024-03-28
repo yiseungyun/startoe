@@ -9,7 +9,7 @@ const Text = styled.div`
   letter-spacing: 0;
   line-height: normal;
   padding-top: 49px;
-  height: 100px;
+  height: 80px;
 `
 
 export default function Top() {
